@@ -4,4 +4,8 @@ price = 0
 
 def pricing():
     global price
-    playerPric=int(input("What would you like to set your price as:"))
+    price=int(input("What would you like to set your price as:"))
+    while price < 0:
+        print("This is an invalid price please try again...")  
+pricing()
+   
