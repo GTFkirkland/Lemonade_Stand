@@ -7,7 +7,8 @@ money = 300 #starting money(temp)
     #Use buyIngre(money) to buy ingrediants
     #Use showStat(money) to show inventory and money
 #recipe
-    #use changeRecipe(recipe)
-
+    #use recipe = changeRecipe(recipe)
+#pricing
+    #use price = changePrice(price)
 
 
