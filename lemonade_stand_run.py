@@ -5,7 +5,7 @@ money = 300 #starting money(temp)
 price = 1
 #folder- cd ./Lemonade_Stand
 #inventory functions
-    #Use buyIngre(money) to buy ingredients
+    #Use money = buyIngre(money) to buy ingredients
     #Use showStat(money) to show inventory and money
 #recipe
     #use recipe = changeRecipe(recipe)
@@ -14,5 +14,5 @@ price = 1
 
 price = pricing.changePrice(price)
 recipe = recipes.changeRecipe(recipes.recipe)
-inventory.buyIngre(money)
+money = inventory.buyIngre(money)
 inventory.showStat(money)
