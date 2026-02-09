@@ -1,4 +1,5 @@
 #to use the function: money = inventory(x,x,money)
+from recipes import recipe
 ingredients = {"shells": 0,
                 "meat": 0,
                 "cheese": 0,
