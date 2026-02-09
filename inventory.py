@@ -41,6 +41,22 @@ def inventory(item, amount, money):
             print("You're to poor to afford this.")
     return money
 
+def maxTacos(list):
+    copyList = list
+    global recipe
+    tacosMade = 0
+    for i in range(0, list["shells"]):
+        copyList["shells"] -= 1
+        copyList["meat"] -= recipe["meat"]
+        copyList["cheese"] -= recipe["cheese"]
+        copyList["hotSauce"] -= recipe["hotSauce"]
+        if copyList["shells"] > 0 and copyList["meat"] > 0 and copyList["cheese"] > 0 and copyList["hotSauce"] > 0:
+            tacosMade +=1
+        else:
+            break
+    return tacosMade
+
+
 def showStat(money):
     global ingredients
     print("~~~~~~~~~~~~~~~~~~~~~~~")
@@ -49,3 +65,4 @@ def showStat(money):
     print("Meat:", ingredients["meat"])
     print("Cheese:", ingredients["cheese"])
     print("Hot Sauce:", ingredients["hotSauce"])
+    print(f"Total tacos: {maxTacos(ingredients)}")
