@@ -7,7 +7,7 @@ ingredients = {"shells": 0,
 def buyIngre(money):
     print("~~~~~~~~~SHOP~~~~~~~~~~~")
     item = input("What do you want to buy?(shells/meat/cheese/hotSauce)\n")
-    if item == "shells" or item == "meat" or item == "cheese" or item == "hotSauce":
+    if item == "shells" or item == "meat" or item == "cheese" or item == "hotSauce" or item == "1" or item == "2" or item == "3" or item == "4":
         amount = int(input("How many of this item?\n"))
         return inventory(item, amount, money)
     else:
@@ -16,19 +16,19 @@ def buyIngre(money):
 
 def inventory(item, amount, money):
     global ingredients
-    if item == "shells":
+    if item == "shells" or item == "1":
         if money >= amount * .20:
             ingredients["shells"] += amount
             money -= amount * .20
         else:
             print("You're too poor to afford this.")
-    elif item == "meat":
+    elif item == "meat" or item == "2":
         if money >= amount * .50:
             ingredients["meat"] += amount
             money -= amount * .50
         else:
             print("You're to poor to afford this.")
-    elif item == "cheese":
+    elif item == "cheese" or item == "3":
         if money >= amount * .40:
             ingredients["cheese"] += amount
             money -= amount * .40
