@@ -28,5 +28,3 @@ def changeRecipe(recipe):
     else:
         print("Changes successfuly made...")
         return recipe
-
-changeRecipe(recipe)
