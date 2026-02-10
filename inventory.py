@@ -6,7 +6,7 @@ ingredients = {"shells": 0,
                 "hotSauce": 0}
 def buyIngre(money):
     print("~~~~~~~~~SHOP~~~~~~~~~~~")
-    item = input("What do you want to buy?(shells/meat/cheese/hotSauce)\n")
+    item = input("What do you want to buy?(shells1/meat2/cheese3/hot sauce4)\n")
     if item == "shells" or item == "meat" or item == "cheese" or item == "hotSauce" or item == "1" or item == "2" or item == "3" or item == "4":
         amount = int(input("How many of this item?\n"))
         return inventory(item, amount, money)
