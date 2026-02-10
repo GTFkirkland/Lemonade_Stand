@@ -15,7 +15,7 @@ def pricingInternal(price):
     if check == "no" or check == "No" or check == "n" or check == "N":
         print("Reverting changes... RELOADING")
         print("~~~~~~~~~~~~~~~~~~~~~~~~")
-        pricingInternal()
+        pricingInternal(price)
     else:
         print("Changes successfuly made...")
         return price
