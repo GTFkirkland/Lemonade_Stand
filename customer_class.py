@@ -24,7 +24,7 @@ class Customer:
 
     def get_customer_attributes(self):
         return {
-            "sweetness": self.sweetness_preference,
-            "ice": self.ice_preference,
+            "cheesy": self.sweetness_preference,
+            "spice": self.ice_preference,
             "price": self.price_point
         }

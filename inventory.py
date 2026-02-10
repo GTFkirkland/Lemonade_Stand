@@ -51,7 +51,7 @@ def maxTacos(list):
         copyList["meat"] -= recipe["meat"]
         copyList["cheese"] -= recipe["cheese"]
         copyList["hotSauce"] -= recipe["hotSauce"]
-        if copyList["shells"] > 0 and copyList["meat"] > 0 and copyList["cheese"] > 0 and copyList["hotSauce"] > 0:
+        if copyList["shells"] >= 0 and copyList["meat"] >= 0 and copyList["cheese"] >= 0 and copyList["hotSauce"] >= 0:
             tacosMade +=1
         else:
             break
