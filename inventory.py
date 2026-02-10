@@ -17,27 +17,27 @@ def buyIngre(money):
 def inventory(item, amount, money):
     global ingredients
     if item == "shells" or item == "1":
-        if money >= amount * .20:
+        if money >= amount * .40:
             ingredients["shells"] += amount
-            money -= amount * .20
+            money -= amount * .40
         else:
             print("You're too poor to afford this.")
     elif item == "meat" or item == "2":
-        if money >= amount * .50:
+        if money >= amount * .70:
             ingredients["meat"] += amount
-            money -= amount * .50
+            money -= amount * .70
         else:
             print("You're to poor to afford this.")
     elif item == "cheese" or item == "3":
-        if money >= amount * .40:
+        if money >= amount * .55:
             ingredients["cheese"] += amount
-            money -= amount * .40
+            money -= amount * .55
         else:
             print("You're to poor to afford this.")
     else:
-        if money >= amount * .25:
+        if money >= amount * .35:
             ingredients["hotSauce"] += amount
-            money -= amount * .25
+            money -= amount * .35
         else:
             print("You're to poor to afford this.")
     return money
