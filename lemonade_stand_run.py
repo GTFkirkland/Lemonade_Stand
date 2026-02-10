@@ -15,4 +15,7 @@ price = 1
 price = pricing.changePrice(price)
 recipe = recipes.changeRecipe(recipes.recipe)
 money = inventory.buyIngre(money)
+money = inventory.buyIngre(money)
+money = inventory.buyIngre(money)
+money = inventory.buyIngre(money)
 inventory.showStat(money)
