@@ -7,7 +7,6 @@ def changeRecipe(recipe):
     #meat
     recipe["meat"] = int(input("How much meat do you want in your tacos? (1-3)\n"))
     while not recipe["meat"] > 0 or recipe["meat"] < 3:
-        print("INVALID RESPONSE")
         try:
             recipe["meat"] = int(input("How much meat do you want in your tacos? (1-3)\n"))
         except ValueError:
@@ -15,7 +14,6 @@ def changeRecipe(recipe):
     #cheese
     recipe["cheese"] = int(input("How much cheese do you want in your tacos? (1-4)\n"))
     while not recipe["cheese"] > 0 or recipe["cheese"] < 4:
-        print("INVALID RESPONSE")
         try:
             recipe["cheese"] = int(input("How much cheese do you want in your tacos? (1-4)\n"))
         except ValueError:
@@ -23,7 +21,6 @@ def changeRecipe(recipe):
     #Hot Sauce
     recipe["hotSauce"] = int(input("How much Hot Sauce do you want in your tacos? (0-3)\n"))
     while not recipe["hotSauce"] > 0 or recipe["hotSauce"] < 3:
-        print("INVALID RESPONSE")
         try:
             recipe["hotSauce"] = int(input("How much Hot Sauce do you want in your tacos? (0-3)\n"))
         except ValueError:
