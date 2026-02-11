@@ -1,6 +1,6 @@
 #This is how the player will set pricing for their game.
 def pricingInternal(price):
-    print(f"Current price per taco is ${price}")
+    print(f"Current price is {price}")
     price = 0
     while price <= 0 or price > 5:
         try:
@@ -15,7 +15,7 @@ def pricingInternal(price):
     if check == "no" or check == "No" or check == "n" or check == "N":
         print("Reverting changes... RELOADING")
         print("~~~~~~~~~~~~~~~~~~~~~~~~")
-        pricingInternal(price)
+        pricingInternal()
     else:
         print("Changes successfuly made...")
         return price
