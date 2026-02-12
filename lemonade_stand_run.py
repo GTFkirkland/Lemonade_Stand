@@ -2,7 +2,7 @@ import inventory
 import pricing
 import recipes
 money = 200 #starting money(temp)
-price = 1
+price = 1 #starting price
 #folder- cd ./Lemonade_Stand
 #inventory functions
     #Use money = buyIngre(money) to buy ingredients
