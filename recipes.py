@@ -5,29 +5,38 @@ recipe = {"meat": 1,
 def changeRecipe(recipe):
     print("~~~~~~~~~~~RECIPE~~~~~~~~~~~")
     #meat
-    recipe["meat"] = int(input("How much meat do you want in your tacos? (1-3)\n"))
-    while not recipe["meat"] > 0 or not recipe["meat"] <= 3:
+    try:
+        recipe["meat"] = int(input("How much meat do you want in your tacos? (1-3)\n"))
+    except:
+        None
+    while recipe["meat"] != 1 and recipe["meat"] != 2 and recipe["meat"] != 3:
+        print("INVALID NUMBER")
         try:
-            print("INVALID NUMBER")
-            recipe["meat"] = int(input("How much meat do you want in your tacos? (1-3)\n"))
+             recipe["meat"] = int(input("How much meat do you want in your tacos? (1-3)\n"))
         except:
-            print("INVALID NUMBER")
+            None
     #cheese
-    recipe["cheese"] = int(input("How much cheese do you want in your tacos? (1-4)\n"))
-    while not recipe["cheese"] > 0 or not recipe["cheese"] <= 4:
+    try:
+        recipe["cheese"] = int(input("How much cheese do you want in your tacos? (1-4)\n"))
+    except:
+        None
+    while recipe["cheese"] != 1 and recipe["cheese"] != 2 and recipe["cheese"] != 3 and recipe["cheese"] != 4:
+        print("INVALID NUMBER")
         try:
-            print("INVALID NUMBER")
             recipe["cheese"] = int(input("How much cheese do you want in your tacos? (1-4)\n"))
         except:
-            print("INVALID NUMBER")
+            None
     #Hot Sauce
-    recipe["hotSauce"] = int(input("How much Hot Sauce do you want in your tacos? (0-3)\n"))
-    while not recipe["hotSauce"] > 0 or not recipe["hotSauce"] <= 3:
+    try:
+        recipe["hotSauce"] = int(input("How much Hot Sauce do you want in your tacos? (0-3)\n"))
+    except:
+        None
+    while recipe["hotSauce"] != 1 and recipe["hotSauce"] != 2 and recipe["hotSauce"] != 3:
+        print("INVALID NUMBER")
         try:
-            print("INVALID NUMBER")
             recipe["hotSauce"] = int(input("How much Hot Sauce do you want in your tacos? (0-3)\n"))
         except:
-            print("INVALID NUMBER")
+            None
     print("~~~~~~~~~~~~~~~~~~~~")
     print("Recipe: Meat:", recipe["meat"], "/ Cheese:", recipe["cheese"], "/ Hot Sauce:", recipe["hotSauce"])
     check = input("Do you like these changes?(y/n)\n")
