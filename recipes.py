@@ -9,22 +9,22 @@ def changeRecipe(recipe):
     while not recipe["meat"] > 0 or not recipe["meat"] <= 3:
         try:
             recipe["meat"] = int(input("How much meat do you want in your tacos? (1-3)\n"))
-        except ValueError:
-            print("This is an invalid number please try again")
+        except:
+            print("INVALID NUMBER")
     #cheese
     recipe["cheese"] = int(input("How much cheese do you want in your tacos? (1-4)\n"))
     while not recipe["cheese"] > 0 or not recipe["cheese"] <= 4:
         try:
             recipe["cheese"] = int(input("How much cheese do you want in your tacos? (1-4)\n"))
-        except ValueError:
-            print("This is an invalid number please try again")
+        except:
+            print("INVALID NUMBER")
     #Hot Sauce
     recipe["hotSauce"] = int(input("How much Hot Sauce do you want in your tacos? (0-3)\n"))
     while not recipe["hotSauce"] > 0 or not recipe["hotSauce"] <= 3:
         try:
             recipe["hotSauce"] = int(input("How much Hot Sauce do you want in your tacos? (0-3)\n"))
-        except ValueError:
-            print("This is an invalid number please try again")
+        except:
+            print("INVALID NUMBER")
     print("~~~~~~~~~~~~~~~~~~~~")
     print("Recipe: Meat:", recipe["meat"], "/ Cheese:", recipe["cheese"], "/ Hot Sauce:", recipe["hotSauce"])
     check = input("Do you like these changes?(y/n)\n")
