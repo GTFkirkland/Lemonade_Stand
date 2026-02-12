@@ -16,6 +16,8 @@ def pricingInternal(price):
         print("Reverting changes... RELOADING")
         print("~~~~~~~~~~~~~~~~~~~~~~~~")
         pricingInternal(price)
+    elif check != "y" or check != "Y" or check != "yes" or check != "Yes" or check != "no" or check != "No" or check != "n" or check != "N":
+        print("This is not an option")
     else:
         print("Changes successfuly made...")
         return price
