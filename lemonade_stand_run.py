@@ -1,7 +1,7 @@
 import inventory
 import pricing
 import recipes
-money = 350 #starting money(temp)
+money = 200 #starting money(temp)
 price = 1
 #folder- cd ./Lemonade_Stand
 #inventory functions
