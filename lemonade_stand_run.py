@@ -22,5 +22,5 @@ price = 1 #starting price
 # inventory.showStat(money)
 
 #GAME
-
+print("Welcome to, Tacobell on Wheels ")
 
