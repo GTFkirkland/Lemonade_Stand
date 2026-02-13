@@ -22,5 +22,5 @@ price = 1 #starting price
 # inventory.showStat(money)
 
 #GAME
-print("Welcome to, Tacobell on Wheels ")
-
+print("Welcome to, TACO BEELL ON WHEEL")
+print("This is NOT a trademark violation *tacobell please don't sue us*")
