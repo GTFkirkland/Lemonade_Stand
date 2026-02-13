@@ -12,7 +12,7 @@ price = 1 #starting price
     #use recipe = changeRecipe(recipe)
 #pricing
     #use price = changePrice(price)
-#debugging:
+#debugging: crtl / to get regular
 # price = pricing.changePrice(price)
 # recipe = recipes.changeRecipe(recipes.recipe)
 # money = inventory.buyIngre(money)
@@ -25,4 +25,10 @@ introStory.startGame(1)
 #GAME
 print("Welcome to, TACO BEELL ON WHEEL")
 print("This is NOT a trademark violation *tacobell please don't sue us*")
-
+price = pricing.changePrice(price)
+recipe = recipes.changeRecipe(recipes.recipe)
+money = inventory.buyIngre(money)
+money = inventory.buyIngre(money)
+money = inventory.buyIngre(money)
+money = inventory.buyIngre(money)
+inventory.showStat(money)
