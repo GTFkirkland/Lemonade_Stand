@@ -26,3 +26,16 @@ introStory.startGame(1)
 print("Welcome to, TACO BEELL ON WHEEL")
 print("This is NOT a trademark violation *tacobell please don't sue us*")
 
+inventory.ingredients = {"shells": 20,
+                "meat": 20,
+                "cheese": 20,
+                "hotSauce": 20}
+
+recipe = recipes.changeRecipe(recipes.recipe)
+
+inventory.showStat(money)
+
+
+
+
+
