@@ -21,6 +21,8 @@ price = 1 #starting price
 # money = inventory.buyIngre(money)
 # inventory.showStat(money)
 
+introStory.startGame(1)
 #GAME
 print("Welcome to, TACO BEELL ON WHEEL")
 print("This is NOT a trademark violation *tacobell please don't sue us*")
+
