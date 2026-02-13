@@ -12,18 +12,13 @@ def pricingInternal(price):
             continue
     print(f"Your price is ${price}")
     check = input("Do you like these changes?(y/n)\n")
-    if check != "y" and check != "Y" and check != "yes" and check != "Yes" and check != "no" and check != "No" and check != "n" and check != "N":
-        while check != "y" and check != "Y" and check != "yes" and check != "Yes" and check != "no" and check != "No" and check != "n" and check != "N":
-            print("INVALID RESPONSE")
-            print(f"Your price is ${price}")
-            check = input("Do you like these changes?(y/n)\n")
-    elif check == "no" or check == "No" or check == "n" or check == "N":
+    if check == "no" or check == "No" or check == "n" or check == "N":
         print("Reverting changes... RELOADING")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~")
         pricingInternal(price)
     else:
         print("Changes successfuly made...")
         return price
+    
 
 def changePrice(price):
     print("~~~~~~~~~~~PRICE~~~~~~~~~~~~")
