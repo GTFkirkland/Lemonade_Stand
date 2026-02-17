@@ -22,7 +22,8 @@ def pricingInternal(price):
 
 def changePrice(price):
     print("~~~~~~~~~~~PRICE~~~~~~~~~~~~")
-    pricingInternal(price)
+    price = pricingInternal(price)
+    return price
 
 
 

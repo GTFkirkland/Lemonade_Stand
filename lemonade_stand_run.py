@@ -2,6 +2,7 @@ import inventory
 import pricing
 import recipes
 import introStory
+import customer_function
 money = 200 #starting money(temp)
 price = 1 #starting price
 #folder- cd ./Lemonade_Stand
@@ -32,7 +33,12 @@ inventory.ingredients = {"shells": 20,
                 "hotSauce": 20}
 
 recipe = recipes.changeRecipe(recipes.recipe)
+price = pricing.changePrice(price)
 
+inventory.showStat(money)
+
+money += customer_function.runCustomers(recipe, price, inventory.ingredients)
+print(f"Total money: ${money}")
 inventory.showStat(money)
 
 

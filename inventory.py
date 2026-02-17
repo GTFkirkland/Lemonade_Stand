@@ -43,7 +43,7 @@ def inventory(item, amount, money):
     return money
 
 def maxTacos(list):
-    copyList = list
+    copyList = {"shells": list["shells"], "meat": list["meat"], "cheese": list["cheese"], "hotSauce": list["hotSauce"]}
     global recipe
     tacosMade = 0
     for i in range(0, list["shells"]):
