@@ -2,10 +2,10 @@
 def pricingInternal(price):
     print(f"Current price per taco is ${price}")
     price = 0
-    while price <= 0 or price > 5:
+    while price <= 0 or price > 15:
         try:
             price = float(input("What do you want to set your new price as? \n"))
-            if price <= 0 or price > 5:
+            if price <= 0 or price > 15:
                 print("This is an INVALID price, please try again")
         except:
             print("This is an INVALID price, please try again")
