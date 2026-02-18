@@ -22,24 +22,48 @@ def inventory(item, amount, money):
             money -= amount * .40
         else:
             print("You're too poor to afford this.")
+            check = input("Go into debt?")
+            if check == "no" or check == "No" or check == "n" or check == "N":
+                None
+            else:
+                ingredients["shells"] += amount
+                money -= amount * .40
     elif item == "meat" or item == "2":
         if money >= amount * .70:
             ingredients["meat"] += amount
             money -= amount * .70
         else:
-            print("You're to poor to afford this.")
+            print("You're too poor to afford this.")
+            check = input("Go into debt?")
+            if check == "no" or check == "No" or check == "n" or check == "N":
+                None
+            else:
+                ingredients["meat"] += amount
+                money -= amount * .40
     elif item == "cheese" or item == "3":
         if money >= amount * .55:
             ingredients["cheese"] += amount
             money -= amount * .55
         else:
-            print("You're to poor to afford this.")
+            print("You're too poor to afford this.")
+            check = input("Go into debt?")
+            if check == "no" or check == "No" or check == "n" or check == "N":
+                None
+            else:
+                ingredients["cheese"] += amount
+                money -= amount * .40
     else:
         if money >= amount * .35:
             ingredients["hotSauce"] += amount
             money -= amount * .35
         else:
-            print("You're to poor to afford this.")
+            print("You're too poor to afford this.")
+            check = input("Go into debt?")
+            if check == "no" or check == "No" or check == "n" or check == "N":
+                None
+            else:
+                ingredients["hotSauce"] += amount
+                money -= amount * .40
     return money
 
 def maxTacos(list):
