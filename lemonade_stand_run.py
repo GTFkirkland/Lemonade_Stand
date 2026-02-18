@@ -26,7 +26,6 @@ introStory.startGame(1)
 #GAME
 print("Welcome to, TACO BEELL ON WHEEL")
 print("This is NOT a trademark violation *tacobell please don't sue us*")
-<<<<<<< HEAD
 price = pricing.changePrice(price)
 recipe = recipes.changeRecipe(recipes.recipe)
 money = inventory.buyIngre(money)
@@ -34,7 +33,7 @@ money = inventory.buyIngre(money)
 money = inventory.buyIngre(money)
 money = inventory.buyIngre(money)
 inventory.showStat(money)
-=======
+#=======
 
 inventory.ingredients = {"shells": 20,
                 "meat": 20,
@@ -54,4 +53,3 @@ inventory.showStat(money)
 
 
 
->>>>>>> d6bfa245ef74dd799caaff40c478620a91a4a90e
