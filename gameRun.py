@@ -44,10 +44,13 @@ if check == "no" or check == "No" or check == "n" or check == "N":
     introStory.startGame(2)
 else:
     introStory.startGame(1)
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 #GAME
 print("Welcome to, TACO BEELL ON WHEEL™")
+
 money = dayMenu.startDay(money)
 money = dayMenu.startDay(money)
+
 
 
 

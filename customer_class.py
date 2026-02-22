@@ -1,6 +1,6 @@
 # customer_class.py
-# The customer class represents a customer at the lemondade stand.
-# The customer has preferences for lemonade sweetness and ice level,
+# The customer class represents a customer at the Taco Truck.
+# The customer has preferences for lemonade sweetness(cheesy) and ice level(spice),
 # and a price point they are willing to pay.
 # All of these attributes will influence their purchasing decision and
 # are returned as a list of attributes.
@@ -11,7 +11,7 @@ class Customer:
     def __init__(self, sweetness_preference=None, ice_preference=None, price_point=None):
         self.sweetness_preference = (
             sweetness_preference if sweetness_preference is not None
-            else random.randint(1, 3)
+            else random.randint(1, 4)
         )
         self.ice_preference = (
             ice_preference if ice_preference is not None
@@ -19,7 +19,7 @@ class Customer:
         )
         self.price_point = (
             price_point if price_point is not None
-            else round(random.uniform(0.01, 12.00),2)
+            else round(random.uniform(3.00, 12.00),2)
         )
 
     def get_customer_attributes(self):

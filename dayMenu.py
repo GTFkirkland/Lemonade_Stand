@@ -12,11 +12,11 @@ def menu(money):
     menuChoice = ""
     while menuChoice != "5":
         print("""What would you like to select?
-~Purchase ingrediants~1
-~Change taco price~2
-~Change taco recipe~3
-~Display inventory and money~4""")
-        menuChoice = input("~Start day~5\n")
+~Purchase ingredients~ 1
+~Change taco price~ 2
+~Change taco recipe~ 3
+~Display inventory and money~ 4""")
+        menuChoice = input("~Start day~ 5\n")
         if menuChoice == "1":
             money = inventory.buyIngre(money, 1)
         elif menuChoice == "2":
@@ -35,10 +35,14 @@ def startDay(money):
     global tires
     global day
     print(f"~~~~~~~~~~~~~~~~~~~~~~~DAY {day}~~~~~~~~~~~~~~~~~~~~~~~~")
+    # inventory.ingredients = {"shells": 50, #STARTING INVENTORY FOR TESTING
+    #             "meat": 50,
+    #             "cheese": 50,
+    #             "hotSauce": 50}
     #special things
     if day == 1: #day 1 special thing
-        tires = input("Do you repair the 3 missing tires on the taco truck for $50?(y/n)")
-        print(tires)
+        print("While looking online you find an amazing deal, and have to make a choice...")
+        tires = input("Do you repair the 3 missing tires on the taco truck for $50?(y/n)\n")
         if not tires == "n":
             tires = "y"
             print("You repaired the tires on the truck... -$50")
