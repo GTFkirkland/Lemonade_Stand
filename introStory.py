@@ -12,7 +12,6 @@ def startGame(style):
         check = input("PENNY,")
         check = input("You count $200")
         check = input("and began devisisng a plan...")
-
     else:
         None
     return

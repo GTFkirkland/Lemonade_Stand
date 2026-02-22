@@ -1,8 +1,9 @@
 from customer_class import Customer
-
+import inventory
 def runCustomers(recipe, price, ingredients):
     customers = []
-    for i in range(10):
+    numberOfcustomers = inventory.maxTacos(ingredients)
+    for i in range(numberOfcustomers):
         customers.append(Customer())
 
     tacosSold = 0

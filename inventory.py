@@ -4,66 +4,99 @@ ingredients = {"shells": 0,
                 "meat": 0,
                 "cheese": 0,
                 "hotSauce": 0}
-def buyIngre(money):
-    print("~~~~~~~~~SHOP~~~~~~~~~~~")
+def buyIngre(money,type):
+    if type == 1:
+        print("~~~~~~~~~SHOP~~~~~~~~~~~")
+    else:
+        None
     item = input("What do you want to buy?(shells(1)/meat(2)/cheese(3)/hotSauce(4))\n")
     if item == "shells" or item == "meat" or item == "cheese" or item == "hotSauce" or item == "1" or item == "2" or item == "3" or item == "4":
         amount = int(input("How many of this item?\n"))
-        return inventory(item, amount, money)
+        money = inventory(item, amount, money)
+        check = input("Purchase more ingrediants?\n")
+        if check == "no" or check == "No" or check == "n" or check == "N":
+            print("~~~~~~~~~~MENU~~~~~~~~~~")
+            return money
+        else:
+            buyIngre(money, 2)
     else:
-        print("That is not an option, this is a taco truck...")
-        buyIngre(money)
+        print("I don't think people want to eat that in their tacos...")
+        buyIngre(money, 2)
 
 def inventory(item, amount, money):
     global ingredients
     if item == "shells" or item == "1":
         if money >= amount * .40:
-            ingredients["shells"] += amount
-            money -= amount * .40
-        else:
-            print("You're too poor to afford this.")
-            check = input("Go into debt?")
-            if check == "no" or check == "No" or check == "n" or check == "N":
-                None
-            else:
+            check = input(f"This will cost ${amount * .40}, continue?\n")
+            if check == "yes" or check == "Yes" or check == "y" or check == "Y":
                 ingredients["shells"] += amount
                 money -= amount * .40
+                print(f"-${amount * .40}")
+            else:
+                None
+        else:
+            print("You're too poor to afford this.")
+            check = input("Go into debt?")
+            if check == "no" or check == "No" or check == "n" or check == "N":
+                None
+            else:
+                print("CHEATER!!!")
+                print("-$1")
+                money -= 1
     elif item == "meat" or item == "2":
         if money >= amount * .70:
-            ingredients["meat"] += amount
-            money -= amount * .70
+            check = input(f"This will cost ${amount * .70}, continue?\n")
+            if check == "yes" or check == "Yes" or check == "y" or check == "Y":
+                ingredients["meat"] += amount
+                money -= amount * .70
+                print(f"-${amount * .70}")
+            else:
+                None
         else:
             print("You're too poor to afford this.")
             check = input("Go into debt?")
             if check == "no" or check == "No" or check == "n" or check == "N":
                 None
             else:
-                ingredients["meat"] += amount
-                money -= amount * .40
+                print("CHEATER!!!")
+                print("-$1")
+                money -= 1
     elif item == "cheese" or item == "3":
         if money >= amount * .55:
-            ingredients["cheese"] += amount
-            money -= amount * .55
+            check = input(f"This will cost ${amount * .55}, continue?\n")
+            if check == "yes" or check == "Yes" or check == "y" or check == "Y":
+                ingredients["cheese"] += amount
+                money -= amount * .55
+                print(f"-${amount * .55}")
+            else:
+                None
         else:
             print("You're too poor to afford this.")
             check = input("Go into debt?")
             if check == "no" or check == "No" or check == "n" or check == "N":
                 None
             else:
-                ingredients["cheese"] += amount
-                money -= amount * .40
+                print("CHEATER!!!")
+                print("-$1")
+                money -= 1
     else:
         if money >= amount * .35:
-            ingredients["hotSauce"] += amount
-            money -= amount * .35
+            check = input(f"This will cost ${amount * .35}, continue?\n")
+            if check == "yes" or check == "Yes" or check == "y" or check == "Y":
+                ingredients["hotSauce"] += amount
+                money -= amount * .35
+                print(f"-${amount * .35}")
+            else:
+                None
         else:
             print("You're too poor to afford this.")
             check = input("Go into debt?")
             if check == "no" or check == "No" or check == "n" or check == "N":
                 None
             else:
-                ingredients["hotSauce"] += amount
-                money -= amount * .40
+                print("CHEATER!!!")
+                print("-$1")
+                money -= 1
     return money
 
 def maxTacos(list):

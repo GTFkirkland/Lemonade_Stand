@@ -46,5 +46,6 @@ def changeRecipe(recipe):
         changeRecipe(recipe)
     else:
         print("Changes successfuly made...")
+        print("~~~~~~~~~~MENU~~~~~~~~~~")
         return recipe
     

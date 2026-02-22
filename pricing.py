@@ -17,6 +17,7 @@ def pricingInternal(price):
         pricingInternal(price)
     else:
         print("Changes successfuly made...")
+        print("~~~~~~~~~~MENU~~~~~~~~~~")
         return price
     
 
