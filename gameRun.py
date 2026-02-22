@@ -47,7 +47,7 @@ else:
 #GAME
 print("Welcome to, TACO BEELL ON WHEEL™")
 money = dayMenu.startDay(money)
-
+money = dayMenu.startDay(money)
 
 
 

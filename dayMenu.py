@@ -10,36 +10,40 @@ def menu(money):
     global recipe
     print("~~~~~~~~~~MENU~~~~~~~~~~")
     menuChoice = ""
-    while menuChoice != "4":
+    while menuChoice != "5":
         print("""What would you like to select?
 ~Purchase ingrediants~1
 ~Change taco price~2
-~Change taco recipe~3""")
-        menuChoice = input("~Start day~4\n")
+~Change taco recipe~3
+~Display inventory and money~4""")
+        menuChoice = input("~Start day~5\n")
         if menuChoice == "1":
-            inventory.buyIngre(money, 1)
+            money = inventory.buyIngre(money, 1)
         elif menuChoice == "2":
             price = pricing.changePrice(price)
         elif menuChoice == "3":
             recipe = changeRecipe(recipe)
-        elif menuChoice == "4":
+        elif menuChoice == "5":
             money += customer_function.runCustomers(recipe, price, inventory.ingredients)
+        elif menuChoice == "4":
+            inventory.showStat(money)
         else:
             print("That is NOT an option, try again...")
+    return money
 
 def startDay(money):
+    global tires
     global day
     print(f"~~~~~~~~~~~~~~~~~~~~~~~DAY {day}~~~~~~~~~~~~~~~~~~~~~~~~")
     #special things
-    #day 1 special thiong
-    if day == 1:
+    if day == 1: #day 1 special thing
         tires = input("Do you repair the 3 missing tires on the taco truck for $50?(y/n)")
-        if tires != "n":
+        print(tires)
+        if not tires == "n":
             tires = "y"
             print("You repaired the tires on the truck... -$50")
             money -= 50
-    #day 2 special thiong
-    elif day == 2:
+    if day == 2: #day 2 special thing
         check = input("When you wake up you spot a chicken crossing the road...")
         if tires == "y":
             chicken = input("RuN iT oVeR?(y/n)")
@@ -52,11 +56,10 @@ def startDay(money):
                 money += 25
         else:
             print("The chicken makes it to the other side...")
-    #more special thiongs later, idk
-    elif day == None:
+    if day == None: #more special things later, idk
         None
     
     #THE ACTUAL DAY
-    menu(money)
-    day+=1
+    day += 1
+    return menu(money)
     

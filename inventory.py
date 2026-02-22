@@ -18,20 +18,20 @@ def buyIngre(money,type):
             print("~~~~~~~~~~MENU~~~~~~~~~~")
             return money
         else:
-            buyIngre(money, 2)
+            return buyIngre(money, 2)
     else:
         print("I don't think people want to eat that in their tacos...")
-        buyIngre(money, 2)
+        return buyIngre(money, 2)
 
 def inventory(item, amount, money):
     global ingredients
     if item == "shells" or item == "1":
-        if money >= amount * .40:
-            check = input(f"This will cost ${amount * .40}, continue?\n")
+        if money >= round(amount * .40,2):
+            check = input(f"This will cost ${round(amount * .40,2)}, continue?\n")
             if check == "yes" or check == "Yes" or check == "y" or check == "Y":
                 ingredients["shells"] += amount
-                money -= amount * .40
-                print(f"-${amount * .40}")
+                money -= round(amount * .40,2)
+                print(f"-${round(amount * .40,2)}")
             else:
                 None
         else:
@@ -44,12 +44,12 @@ def inventory(item, amount, money):
                 print("-$1")
                 money -= 1
     elif item == "meat" or item == "2":
-        if money >= amount * .70:
-            check = input(f"This will cost ${amount * .70}, continue?\n")
+        if money >= round(amount * .70,2):
+            check = input(f"This will cost ${round(amount * .70,2)}, continue?\n")
             if check == "yes" or check == "Yes" or check == "y" or check == "Y":
                 ingredients["meat"] += amount
-                money -= amount * .70
-                print(f"-${amount * .70}")
+                money -= round(amount * .70,2)
+                print(f"-${round(amount * .70,2)}")
             else:
                 None
         else:
@@ -62,12 +62,12 @@ def inventory(item, amount, money):
                 print("-$1")
                 money -= 1
     elif item == "cheese" or item == "3":
-        if money >= amount * .55:
-            check = input(f"This will cost ${amount * .55}, continue?\n")
+        if money >= round(amount * .55,2):
+            check = input(f"This will cost ${round(amount * .55,2)}, continue?\n")
             if check == "yes" or check == "Yes" or check == "y" or check == "Y":
                 ingredients["cheese"] += amount
-                money -= amount * .55
-                print(f"-${amount * .55}")
+                money -= round(amount * .55,2)
+                print(f"-${round(amount * .55,2)}")
             else:
                 None
         else:
@@ -80,12 +80,12 @@ def inventory(item, amount, money):
                 print("-$1")
                 money -= 1
     else:
-        if money >= amount * .35:
-            check = input(f"This will cost ${amount * .35}, continue?\n")
+        if money >= round(amount * .35,2):
+            check = input(f"This will cost ${round(amount * .35,2)}, continue?\n")
             if check == "yes" or check == "Yes" or check == "y" or check == "Y":
                 ingredients["hotSauce"] += amount
-                money -= amount * .35
-                print(f"-${amount * .35}")
+                money -= round(amount * .35,2)
+                print(f"-${round(amount * .35,2)}")
             else:
                 None
         else:
@@ -117,10 +117,11 @@ def maxTacos(list):
 
 def showStat(money):
     global ingredients
-    print("~~~~~~~~~~~~~~~~~~~~~~~")
+    print("~~~~~~~~~~~INVENTORY~~~~~~~~~~~~")
     print("$$$:", money)
     print("Shells:", ingredients["shells"])
     print("Meat:", ingredients["meat"])
     print("Cheese:", ingredients["cheese"])
     print("Hot Sauce:", ingredients["hotSauce"])
-    print(f"Total tacos: {maxTacos(ingredients)}")
+    check = input(f"Total tacos: {maxTacos(ingredients)}")
+    print("~~~~~~~~~~MENU~~~~~~~~~~")
