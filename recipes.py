@@ -6,6 +6,7 @@ recipe = {"meat": 1,
 def changeRecipe(recipe):
     print("~~~~~~~~~~~RECIPE~~~~~~~~~~~")
     #meat
+    print("Current recipe: Meat:", recipe["meat"], "/ Cheese:", recipe["cheese"], "/ Hot Sauce:", recipe["hotSauce"])
     try:
         recipe["meat"] = int(input("How much meat do you want in your tacos? (1-3)\n"))
     except:
@@ -43,8 +44,9 @@ def changeRecipe(recipe):
     check = input("Do you like these changes?(y/n)\n")
     if check == "no" or check == "No" or check == "n" or check == "N":
         print("Reverting changes... RELOADING")
-        changeRecipe(recipe)
+        return changeRecipe(recipe)
     else:
         print("Changes successfuly made...")
+        print("~~~~~~~~~~MENU~~~~~~~~~~")
         return recipe
     
