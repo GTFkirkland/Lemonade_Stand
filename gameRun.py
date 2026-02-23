@@ -46,7 +46,7 @@ else:
     introStory.startGame(1)
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 #GAME
-print("Welcome to, TACO BEELL ON WHEEL™")
+print("Welcome to, TACO BEELL ON WHEEL™ 🌮🌮🌮")
 
 money = dayMenu.startDay(money)
 money = dayMenu.startDay(money)

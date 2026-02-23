@@ -64,7 +64,14 @@ def runCustomers(recipe, price, ingredients):
     print("~~~~~~~~~~END OF DAY~~~~~~~~~~")
     print(f"Tacos sold: {tacosSold}")
     print(f"Money earned today: ${money}")
-    print(f"Price:{sadCounter["too high price"]}, Too little cheese:{sadCounter["too little cheese"]}, Too Little Sauce:{sadCounter["too little sauce"]}, Too much cheese:{sadCounter["too much cheese"]}, Too much sauce:{sadCounter["too much sauce"]}")
+    print(f"""{sadCounter['too high price']} customers thought the price was too high
+{sadCounter['too little cheese']} customers thought there wasn't enough cheese
+{sadCounter['too much cheese']} customers thought there was too much cheese
+{sadCounter['too little sauce']} customers thought the taco looked too mild
+{sadCounter['too much sauce']} customers thought the taco looked too spicy""")
+    
+    
+    
     return money
 
 
