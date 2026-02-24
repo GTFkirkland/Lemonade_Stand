@@ -2,6 +2,7 @@ from customer_class import Customer
 import inventory
 import random
 from customer_names import He_names, She_names
+from time import sleep
 def runCustomers(recipe, price, ingredients):
     global He_names
     global She_names
@@ -60,6 +61,7 @@ def runCustomers(recipe, price, ingredients):
                 ingredients["hotSauce"] -= recipe["hotSauce"]
             else:
                 print(f"Customer {i + 1} wanted to buy but you ran out of ingredients!!")
+        sleep(random.random()*0.3)
 
     print("~~~~~~~~~~END OF DAY~~~~~~~~~~")
     print(f"Tacos sold: {tacosSold}")
