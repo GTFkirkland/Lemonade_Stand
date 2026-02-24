@@ -36,23 +36,23 @@ def runCustomers(recipe, price, ingredients):
             #print(f"Customer {i + 1} didn't like the spice level. Your customer said they didn't want to be a fire breathing dragon")
         
         if price > price_limit+((recipe["meat"]*1.5)-0.5): #added some cusion to make it more plausable (see bottom for math details)
-            print(f"{name} looked at the price and walked away. you can't monopolize your customers")
+            print(f"{name} looked at the price and walked away. you can't monopolize your customers❌")
             sadCounter["too high price"] += 1
         elif recipe["cheese"] - cheesy_pref >1: #too much cheese(you can go 1 over for realism and 1 under)
-            print(f"{name} didn't like the cheese amount. {name} said {chosenGender.lower()} couldn't even see the shell")
+            print(f"{name} didn't like the cheese amount. {name} said {chosenGender.lower()} couldn't even see the shell❌")
             sadCounter["too much cheese"] += 1
         elif recipe["cheese"] - cheesy_pref <-1: #too little cheese
-            print(f"{name} didn't like the cheese amount. {name} didn't say {chosenGender.lower()} was lactose intolerant")
+            print(f"{name} didn't like the cheese amount. {name} didn't say {chosenGender.lower()} was lactose intolerant❌")
             sadCounter["too little cheese"] += 1
         elif recipe["hotSauce"] - spice_pref >1: #too much hotsauce
-            print(f"{name} didn't like the spice level. {name} said {chosenGender.lower()} didn't want to be a fire breathing dragon")
+            print(f"{name} didn't like the spice level. {name} said {chosenGender.lower()} didn't want to be a fire breathing dragon❌")
             sadCounter["too much sauce"] += 1
         elif recipe["hotSauce"] - spice_pref <-1: #too little hot sauce(you can go 1 under for realism)
-            print(f"{name} didn't like the spice level. {name} didn't say {chosenGender.lower()} wanted a dry, bland taco")
+            print(f"{name} didn't like the spice level. {name} didn't say {chosenGender.lower()} wanted a dry, bland taco❌")
             sadCounter["too little sauce"] += 1
         else:
             if ingredients["shells"] >= 1 and ingredients["meat"] >= recipe["meat"] and ingredients["cheese"] >= recipe["cheese"] and ingredients["hotSauce"] >= recipe["hotSauce"]:
-                print(f"{name} bought a taco! +${price}")
+                print(f"{name} bought a taco! +${price}✅")
                 tacosSold += 1
                 money += price
                 ingredients["shells"] -= 1
@@ -71,9 +71,15 @@ def runCustomers(recipe, price, ingredients):
 {sadCounter['too much cheese']} customers thought there was too much cheese
 {sadCounter['too little sauce']} customers thought the taco looked too mild
 {sadCounter['too much sauce']} customers thought the taco looked too spicy""")
-    
-    
-    
+    #some ingridiants spoil
+    ingredients["shells"] = ingredients["shells"]/1.5
+    ingredients["meat"] = ingredients["meat"]/4
+    ingredients["cheese"] = ingredients["cheese"]/2
+    ingredients["hotSauce"] = ingredients["hotSauce"] #hotsauce doesn't spoil
+    if ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] == 0:
+        print("Some of your ingrediants spoiled...❌")
+    else:
+        print("You successfuly sold all of your tacos!✅")
     return money
 
 
