@@ -11,7 +11,11 @@ def buyIngre(money,type):
         None
     item = input("What do you want to buy?(shells(1)/meat(2)/cheese(3)/hotSauce(4))\n")
     if item == "shells" or item == "meat" or item == "cheese" or item == "hotSauce" or item == "1" or item == "2" or item == "3" or item == "4":
-        amount = int(input("How many of this item?\n"))
+        while not amount >= 0 and not amount <= 1000000:
+            try:
+                amount = int(input("How many of this item?\n"))
+            except:
+                print("Add a realistic integer number")
         money = inventory(item, amount, money)
         check = input("Purchase more ingrediants?\n")
         if check == "no" or check == "No" or check == "n" or check == "N":
