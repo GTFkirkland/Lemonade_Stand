@@ -48,8 +48,14 @@ else:
 #GAME
 print("Welcome to, TACO BEELL ON WHEEL™ 🌮🌮🌮")
 
-money = dayMenu.startDay(money)
-money = dayMenu.startDay(money)
+while True:
+    money = dayMenu.startDay(money)
+    if money <= 0:
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(" When the day ends you see your last penny drop into the flood of circulation...")
+        print("                                   GAME OVER")
+        break
+    
 
 
 

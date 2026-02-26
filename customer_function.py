@@ -71,15 +71,15 @@ def runCustomers(recipe, price, ingredients):
 {sadCounter['too much cheese']} customers thought there was too much cheese
 {sadCounter['too little sauce']} customers thought the taco looked too mild
 {sadCounter['too much sauce']} customers thought the taco looked too spicy""")
-    #some ingridiants spoil
-    ingredients["shells"] = ingredients["shells"]/1.5
-    ingredients["meat"] = ingredients["meat"]/4
-    ingredients["cheese"] = ingredients["cheese"]/2
-    ingredients["hotSauce"] = ingredients["hotSauce"] #hotsauce doesn't spoil
-    if ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] != 0:
-        print("Some of your ingrediants spoiled...❌")
-    else:
+    #some ingredients spoil
+    ingredients["shells"] = round(ingredients["shells"]/1.5)
+    ingredients["meat"] = round(ingredients["meat"]/4)
+    ingredients["cheese"] = round(ingredients["cheese"]/2)
+    #hotsauce doesn't spoil
+    if ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] == 0:
         print("You successfuly sold all of your tacos!✅")
+    else:
+        print("Some of your ingredients spoiled...❌")
     return money
 
 
