@@ -12,11 +12,11 @@ def menu(money):
     menuChoice = ""
     while menuChoice != "5":
         print("""What would you like to select?
-~Purchase ingredients~ 1
-~Change taco price~ 2
-~Change taco recipe~ 3
-~Display inventory and money~ 4""")
-        menuChoice = input("~Start day~ 5\n")
+1) Purchase Ingredients
+2) Change taco price
+3) Change taco recipe
+4) Display inventory and money""")
+        menuChoice = input("5) Start day\n")
         if menuChoice == "1":
             money = inventory.buyIngre(money, 1)
         elif menuChoice == "2":
@@ -55,8 +55,8 @@ def startDay(money):
                 chicken = "y"
                 for i in range(5):
                     check = input("...")
-                check = input("You... you just killed the chicken")
-                check = input("HOW COULD YOU!? +$25")
+                check = input("While viewing the chicken's final moments you spot something green in its mouth.")
+                check = input('Inside you find a $25 bill and think, "How did that get there?" +$25')
                 money += 25
         else:
             print("The chicken makes it to the other side...")

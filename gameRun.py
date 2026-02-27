@@ -5,6 +5,7 @@ import introStory
 import customer_function
 import dayMenu
 money = 200 #starting money
+health = 1 #yes, you can die now
 #folder- cd ./Lemonade_Stand
 #inventory functions
     #Use money = buyIngre(money, 1) to buy ingredients
@@ -55,6 +56,10 @@ while True:
         print(" When the day ends you see your last penny drop into the flood of circulation...")
         print("                                   GAME OVER")
         break
+    if health == 0:
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(" You feel the last of your life force draining out of you...")
+        print("                        GAME OVER")
     
 
 
