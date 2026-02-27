@@ -66,7 +66,8 @@ def runCustomers(recipe, price, ingredients):
     print("~~~~~~~~~~END OF DAY~~~~~~~~~~")
     print(f"Tacos sold: {tacosSold}")
     print(f"Money earned today: ${money}")
-    print(f"""{sadCounter['too high price']} customers thought the price was too high
+    if numberOfcustomers > 0:
+        print(f"""{sadCounter['too high price']} customers thought the price was too high
 {sadCounter['too little cheese']} customers thought there wasn't enough cheese
 {sadCounter['too much cheese']} customers thought there was too much cheese
 {sadCounter['too little sauce']} customers thought the taco looked too mild
@@ -76,7 +77,9 @@ def runCustomers(recipe, price, ingredients):
     ingredients["meat"] = round(ingredients["meat"]/4)
     ingredients["cheese"] = round(ingredients["cheese"]/2)
     #hotsauce doesn't spoil
-    if ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] == 0:
+    if numberOfcustomers == 0:
+        print("You had no tacos to sell... and got no customers... 😭🌮")
+    elif ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] == 0:
         print("You successfuly sold all of your tacos!✅")
     else:
         print("Some of your ingredients spoiled...❌")
