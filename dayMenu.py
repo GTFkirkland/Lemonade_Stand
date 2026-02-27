@@ -60,11 +60,14 @@ def startDay(money):
                 money += 25
         else:
             print("The chicken makes it to the other side...")
-    elif day == None: #day 3 special thing
-        None
-    
-    
-    if day == None: #more special things later, idk
+    elif day == 3: #day 3 special thing
+        check = input("The day's begining greets you with an offer...")
+        brakes = input("You can buy truck brakes for $25, do you?\n")
+        if not brakes == "n":
+            brakes = "y"
+            print("You purchased brakes... -$25")
+            money -= 25
+    elif day == None: #more special things later, idk
         None
     
     #THE ACTUAL DAY
