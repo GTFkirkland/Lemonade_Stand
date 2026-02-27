@@ -47,7 +47,7 @@ def startDay(money):
             tires = "y"
             print("You repaired the tires on the truck... -$50")
             money -= 50
-    if day == 2: #day 2 special thing
+    elif day == 2: #day 2 special thing
         check = input("When you wake up you spot a chicken crossing the road...")
         if tires == "y":
             chicken = input("RuN iT oVeR?(y/n)")
@@ -60,6 +60,10 @@ def startDay(money):
                 money += 25
         else:
             print("The chicken makes it to the other side...")
+    elif day == None: #day 3 special thing
+        None
+    
+    
     if day == None: #more special things later, idk
         None
     

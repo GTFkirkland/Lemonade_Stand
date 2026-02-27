@@ -60,6 +60,8 @@ while True:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print(" You feel the last of your life force draining out of you...")
         print("                        GAME OVER")
+    if health == -999:
+        print("Whatever win is")
     
 
 

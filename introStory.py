@@ -14,6 +14,6 @@ def startGame(style):
         check = input("and begin devisisng a plan...")
     else:
         None
-    for i in range(100):
+    for i in range(5):
         print(" ")
 
