@@ -9,7 +9,7 @@ def buyIngre(money,type):
         print("~~~~~~~~~SHOP~~~~~~~~~~~")
     else:
         None
-    item = input("What do you want to buy?(shells(1)/meat(2)/cheese(3)/hotSauce(4))\n")
+    item = input("What do you want to buy?[shells(1)/meat(2)/cheese(3)/hotSauce(4)] [EXIT(5)]\n")
     if item == "shells" or item == "meat" or item == "cheese" or item == "hotSauce" or item == "1" or item == "2" or item == "3" or item == "4":
         amount=-1
         while amount < 0 or amount > 1000000:
@@ -24,6 +24,9 @@ def buyIngre(money,type):
             return money
         else:
             return buyIngre(money, 2)
+    elif item == "5":
+        print("~~~~~~~~~~MENU~~~~~~~~~~")
+        return money
     else:
         print("I don't think people want to eat that in their tacos...")
         return buyIngre(money, 2)
@@ -123,7 +126,7 @@ def maxTacos(list):
 def showStat(money):
     global ingredients
     print("~~~~~~~~~~~INVENTORY~~~~~~~~~~~~")
-    print("$$$:", money)
+    print("$$$:", round(money,2))
     print("Shells:", ingredients["shells"])
     print("Meat:", ingredients["meat"])
     print("Cheese:", ingredients["cheese"])

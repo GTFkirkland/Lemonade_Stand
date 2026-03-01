@@ -48,6 +48,9 @@ def startDay(money):
             print("You repaired the tires on the truck... -$50")
             money -= 50
     elif day == 2: #day 2 special thing
+        print(f"When day {day} rolls around you know it's time to pay your taxes...")
+        print(f"-$5(Independant)")
+        check = input("(click enter to continue)")
         check = input("When you wake up you spot a chicken crossing the road...")
         if tires == "y":
             chicken = input("RuN iT oVeR?(y/n)")
@@ -62,13 +65,30 @@ def startDay(money):
             print("The chicken makes it to the other side...")
     elif day == 3: #day 3 special thing
         check = input("The day's begining greets you with an offer...")
-        brakes = input("You can buy truck brakes for $25, do you?\n")
+        brakes = input("You can buy truck brakes for $25, do you?(y/n)\n")
         if not brakes == "n":
             brakes = "y"
             print("You purchased brakes... -$25")
             money -= 25
-    elif day == None: #more special things later, idk
+    elif day == 4: #day 4 special thing
+        print(f"When day {day} rolls around you know it's time to pay your taxes...")
+        print(f"-$5(Independant)")
+        check = input("(click enter to continue)")
+    elif day == 5: #day 5 special thing
         None
+    elif day == 6: #day 6 special thing
+        print(f"When day {day} rolls around you know it's time to pay your taxes...")
+        print(f"-$5(Independant)")
+        check = input("(click enter to continue)")
+    elif day == 7: #day 7 special thing
+        None
+    else:
+        if day % 2 == 0:
+            print(f"When day {day} rolls around you know it's time to pay your taxes...")
+            print(f"-${round(day*(money/100),2)}(Dependant)")
+            print(f"-$5(Independant)")
+            check = input("(click enter to continue)")
+            money -= round(day*(money/100),2)
     
     #THE ACTUAL DAY
     day += 1

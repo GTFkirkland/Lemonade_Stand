@@ -51,15 +51,15 @@ print("Welcome to, TACO BEELL ON WHEEL™ 🌮🌮🌮")
 
 while True:
     money = dayMenu.startDay(money)
-    if money <= 0:
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(" When the day ends you see your last penny drop into the flood of circulation...")
-        print("                                   GAME OVER")
+    if money < 10:
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(" When the day ends you feel you don't have the funds to keep going...")
+        print("                           GAME OVER")
         break
     if health == 0:
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(" You feel the last of your life force draining out of you...")
-        print("                        GAME OVER")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(" You feel the handcuffs latching around you wrists and will soon know what a dirty prison cell smells like...")
+        print("                                               GAME OVER")
     if health == -999:
         print("Whatever win is")
     

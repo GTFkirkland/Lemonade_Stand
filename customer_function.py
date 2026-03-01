@@ -42,7 +42,7 @@ def runCustomers(recipe, price, ingredients):
             print(f"{name} didn't like the cheese amount. {name} said {chosenGender.lower()} couldn't even see the shell❌")
             sadCounter["too much cheese"] += 1
         elif recipe["cheese"] - cheesy_pref <-1: #too little cheese
-            print(f"{name} didn't like the cheese amount. {name} didn't say {chosenGender.lower()} was lactose intolerant❌")
+            print(f"{name} didn't like the cheese amount. {chosenGender} didn't say {chosenGender.lower()} was lactose intolerant❌")
             sadCounter["too little cheese"] += 1
         elif recipe["hotSauce"] - spice_pref >1: #too much hotsauce
             print(f"{name} didn't like the spice level. {name} said {chosenGender.lower()} didn't want to be a fire breathing dragon❌")
@@ -79,9 +79,11 @@ def runCustomers(recipe, price, ingredients):
     #hotsauce doesn't spoil
     if numberOfcustomers == 0:
         print("You had no tacos to sell... and got no customers... 😭🌮")
-    elif ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] == 0:
+    
+    if ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] == 0 and numberOfcustomers > 0:
         print("You successfuly sold all of your tacos!✅")
-    else:
+    
+    if ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] > 0:
         print("Some of your ingredients spoiled...❌")
     return money
 
