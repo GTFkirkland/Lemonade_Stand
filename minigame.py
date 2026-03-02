@@ -7,22 +7,28 @@ from time import sleep
 import random
 #bot func
 def getBot(level1):
-    global botLocations
-    botLocations = [['N/A', random.randint(-15,-2)],['N/A', random.randint(-15,-2)],['N/A', random.randint(-15,-2)]]
-    for i in range(0,3):
-        if botLocations[i][1] < -8:
-            botLocations[i][0] = random.randint(1,14)
-        else:
-            botLocations[i][0] = random.randint(9,14)
-    
-    if level1[botLocations[0][1]][botLocations[0][0]] == 'X' or level1[botLocations[1][1]][botLocations[1][0]] == 'X' or level1[botLocations[2][1]][botLocations[2][0]] == 'X':
-        while level1[botLocations[0][1]][botLocations[0][0]] == 'X' or level1[botLocations[1][1]][botLocations[1][0]] == 'X' or level1[botLocations[2][1]][botLocations[2][0]] == 'X':
+    run = False
+    while run == False:
+        try:
+            run = True
+            global botLocations
             botLocations = [['N/A', random.randint(-15,-2)],['N/A', random.randint(-15,-2)],['N/A', random.randint(-15,-2)]]
-            for i in range(0,2):
+            for i in range(0,3):
                 if botLocations[i][1] < -8:
                     botLocations[i][0] = random.randint(1,14)
                 else:
                     botLocations[i][0] = random.randint(9,14)
+    
+            if level1[botLocations[0][1]][botLocations[0][0]] == 'X' or level1[botLocations[1][1]][botLocations[1][0]] == 'X' or level1[botLocations[2][1]][botLocations[2][0]] == 'X':
+                while level1[botLocations[0][1]][botLocations[0][0]] == 'X' or level1[botLocations[1][1]][botLocations[1][0]] == 'X' or level1[botLocations[2][1]][botLocations[2][0]] == 'X':
+                    botLocations = [['N/A', random.randint(-15,-2)],['N/A', random.randint(-15,-2)],['N/A', random.randint(-15,-2)]]
+                    for i in range(0,2):
+                        if botLocations[i][1] < -8:
+                            botLocations[i][0] = random.randint(1,14)
+                        else:
+                            botLocations[i][0] = random.randint(9,14)
+        except:
+            run = False
 
 def moveBot(level1, playerLocation, botNumber):
     global botLocations
@@ -138,6 +144,8 @@ def minigame():
         print("AVOID THE POLICE, FIND THE EXIT(E)")
         for row in range(0,16):
             print(level1[row])
+        print(playerLocation)
+        print(botLocations)
         answer = input('Move: ')
 
         if (answer == 'w') or (answer == 'W'):
@@ -169,7 +177,7 @@ def minigame():
         level1 = moveBot(level1, playerLocation, 1)
         level1 = moveBot(level1, playerLocation, 2)
         
-        if (level1[playerLocation[1]+1][playerLocation[0]] == 'C') or (level1[playerLocation[1]-1][playerLocation[0]] == 'C') or (level1[playerLocation[1]][playerLocation[0]+1] == 'C') or (level1[playerLocation[1]][playerLocation[0]-1] == 'C'):
+        if (level1[playerLocation[1]+1][playerLocation[0]] == 'C') or (level1[playerLocation[1]-1][playerLocation[0]] == 'C') or (level1[playerLocation[1]][playerLocation[0]+1] == 'C') or (level1[playerLocation[1]][playerLocation[0]-1] == 'C') or (level1[playerLocation[1]][playerLocation[0]] == 'C'):
             health = 0
             print("You died...")
             break
