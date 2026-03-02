@@ -74,6 +74,19 @@ def startDay(money):
         print(f"When day {day} rolls around you know it's time to pay your taxes...")
         print(f"-$5(Independant)")
         check = input("(click enter to continue)")
+        print("You have recieved an offer to cater a wedding.(click enter to continue)")
+        print("While driving there you cross a bridge and hear a wierd creek.")
+        if tires == "y":
+            chicken = input("RuN iT oVeR?(y/n)")
+            if chicken != "n":
+                chicken = "y"
+                for i in range(5):
+                    check = input("...")
+                check = input("While viewing the chicken's final moments you spot something green in its mouth.")
+                check = input('Inside you find a $25 bill and think, "How did that get there?" +$25')
+                money += 25
+        else:
+            print("The chicken makes it to the other side...")
     elif day == 5: #day 5 special thing
         None
     elif day == 6: #day 6 special thing
