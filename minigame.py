@@ -141,7 +141,7 @@ def minigame():
             print("")
         print("You: 8")
         print("Police: C")
-        print("AVOID THE POLICE, FIND THE EXIT(E)")
+        print("AVOID THE POLICE, FIND THE EXIT(E) WITH wasd")
         for row in range(0,16):
             print(level1[row])
         print(playerLocation)
