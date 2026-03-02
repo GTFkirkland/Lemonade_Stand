@@ -7,6 +7,7 @@ from time import sleep
 import random
 #bot func
 def getBot(level1):
+    global botLocations
     botLocations = [['N/A', random.randint(-15,-2)],['N/A', random.randint(-15,-2)],['N/A', random.randint(-15,-2)]]
     for i in range(0,3):
         if botLocations[i][1] < -8:
@@ -23,9 +24,8 @@ def getBot(level1):
                 else:
                     botLocations[i][0] = random.randint(9,14)
 
-    return botLocations
-
-def moveBot(level1, botLocations, playerLocation, botNumber):
+def moveBot(level1, playerLocation, botNumber):
+    global botLocations
     move = 'N/A'
     if botLocations[botNumber][0] == playerLocation[0]:
         move = 'vert'
@@ -43,10 +43,13 @@ def moveBot(level1, botLocations, playerLocation, botNumber):
         if move == 'horo':
             copy = botLocations[botNumber][0]
             if playerLocation[0] < botLocations[botNumber][0]:
+                level1[botLocations[botNumber][1]][botLocations[botNumber][0]] = '_'
                 botLocations[botNumber][0] = botLocations[botNumber][0]-1
             else:
+                level1[botLocations[botNumber][1]][botLocations[botNumber][0]] = '_'
                 botLocations[botNumber][0] = botLocations[botNumber][0]+1
             if level1[botLocations[botNumber][1]][botLocations[botNumber][0]] == 'X':
+                level1[botLocations[botNumber][1]][botLocations[botNumber][0]] = 'X'
                 botLocations[botNumber][0] = copy
                 move = 'vert'
             else:
@@ -54,16 +57,19 @@ def moveBot(level1, botLocations, playerLocation, botNumber):
         else:
             copy = botLocations[botNumber][1]
             if playerLocation[1] < botLocations[botNumber][1]:
+                level1[botLocations[botNumber][1]][botLocations[botNumber][0]] = '_'
                 botLocations[botNumber][1] = botLocations[botNumber][1]-1
             else:
+                level1[botLocations[botNumber][1]][botLocations[botNumber][0]] = '_'
                 botLocations[botNumber][1] = botLocations[botNumber][1]+1
-            if level1[botLocations[botNumber][0]][botLocations[botNumber][1]] == 'X':
+            if level1[botLocations[botNumber][1]][botLocations[botNumber][0]] == 'X':
+                level1[botLocations[botNumber][1]][botLocations[botNumber][0]] = 'X'
                 botLocations[botNumber][1] = copy
-                move = 'vert'
+                move = 'horo'
             else:
                 break
-    
-    return botLocations
+    level1[botLocations[botNumber][1]][botLocations[botNumber][0]] = 'C'
+    return level1
         
 
 
@@ -72,6 +78,7 @@ def moveBot(level1, botLocations, playerLocation, botNumber):
 
 
 def minigame():
+    global botLocations
     level = random.randint(1,2)
     if level == 1:
         level1 = [
@@ -115,10 +122,10 @@ def minigame():
     playerLocation = [1,-2]
     # botLocations = [[random.randint(-15,-2), random.randint(9,14)],[random.randint(-15,-9), random.randint(9,14)],[random.randint(-15,9), random.randint(9,14)]]
     #getting bots
-    botLocations = getBot(level1)
-    level1[botLocations[0][0]][botLocations[0][1]] = 'C'
-    level1[botLocations[1][0]][botLocations[1][1]] = 'C'
-    level1[botLocations[2][0]][botLocations[2][1]] = 'C'
+    getBot(level1)
+    level1[botLocations[0][1]][botLocations[0][0]] = 'C'
+    level1[botLocations[1][1]][botLocations[1][0]] = 'C'
+    level1[botLocations[2][1]][botLocations[2][0]] = 'C'
     
     row = 0
     answer = 'N/A'
@@ -158,25 +165,23 @@ def minigame():
                 level1[playerLocation[1]][playerLocation[0]] = '8'
 
         #bot movement
-        moveBot(level1, botLocations, playerLocation, 0)
-        moveBot(level1, botLocations, playerLocation, 1)
-        moveBot(level1, botLocations, playerLocation, 2)
-        level1[botLocations[0][0]][botLocations[0][1]] = 'C'
-        level1[botLocations[1][0]][botLocations[1][1]] = 'C'
-        level1[botLocations[2][0]][botLocations[2][1]] = 'C'
+        level1 = moveBot(level1, playerLocation, 0)
+        level1 = moveBot(level1, playerLocation, 1)
+        level1 = moveBot(level1, playerLocation, 2)
         
-        if level1[playerLocation[1]][playerLocation[0]] == 'C':
+        if (level1[playerLocation[1]+1][playerLocation[0]] == 'C') or (level1[playerLocation[1]-1][playerLocation[0]] == 'C') or (level1[playerLocation[1]][playerLocation[0]+1] == 'C') or (level1[playerLocation[1]][playerLocation[0]-1] == 'C'):
             health = 0
+            print("You died...")
             break
 
-        if (level1[playerLocation[1]+1][playerLocation[0]] == 'E') or (level1[playerLocation[1]-1][playerLocation[0]] == 'E') or (level1[playerLocation[1]][playerLocation[0]+1] == 'E') or (level1[playerLocation[0]][playerLocation[0]-1] == 'E'):
+        if (level1[playerLocation[1]+1][playerLocation[0]] == 'E') or (level1[playerLocation[1]-1][playerLocation[0]] == 'E') or (level1[playerLocation[1]][playerLocation[0]+1] == 'E') or (level1[playerLocation[1]][playerLocation[0]-1] == 'E'):
             for i in range(100):
                 print("")
             print("YOU FOUND THE EXIT")
             for row in range(0,16):
                 print(level1[row])
             print("exiting...")
-            sleep(3)
+            sleep(0.1)
             health = 1
             break
     return health
