@@ -2,6 +2,7 @@ import inventory
 import pricing
 from recipes import recipe, changeRecipe
 import customer_function
+from gameRun import health
 #This is the day menu for TACO BEELL ON WHEEL
 day = 1
 price = 1 #starting price
@@ -34,6 +35,7 @@ def menu(money):
 def startDay(money):
     global tires
     global day
+    global health
     print(f"~~~~~~~~~~~~~~~~~~~~~~~DAY {day}~~~~~~~~~~~~~~~~~~~~~~~~")
     # inventory.ingredients = {"shells": 50, #STARTING INVENTORY FOR TESTING
     #             "meat": 50,
@@ -75,18 +77,11 @@ def startDay(money):
         print(f"-$5(Independant)")
         check = input("(click enter to continue)")
         print("You have recieved an offer to cater a wedding.(click enter to continue)")
-        print("While driving there you cross a bridge and hear a wierd creek.")
-        if tires == "y":
-            chicken = input("RuN iT oVeR?(y/n)")
-            if chicken != "n":
-                chicken = "y"
-                for i in range(5):
-                    check = input("...")
-                check = input("While viewing the chicken's final moments you spot something green in its mouth.")
-                check = input('Inside you find a $25 bill and think, "How did that get there?" +$25')
-                money += 25
+        print("While driving there you cross a bridge and hear a weird creek.")
+        if brakes == "y":
+            print("you made it out alive. (+$50)")
         else:
-            print("The chicken makes it to the other side...")
+            health = -1
     elif day == 5: #day 5 special thing
         None
     elif day == 6: #day 6 special thing
@@ -105,5 +100,8 @@ def startDay(money):
     
     #THE ACTUAL DAY
     day += 1
-    return menu(money)
+    if health > 0:
+        return menu(money)
+    else:
+        return money
     

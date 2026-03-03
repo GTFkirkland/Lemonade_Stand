@@ -56,11 +56,15 @@ while True:
         print(" When the day ends you feel you don't have the funds to keep going...")
         print("                           GAME OVER")
         break
-    if health == 0:
+    elif health == 0:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print(" You feel the handcuffs latching around you wrists and will soon know what a dirty prison cell smells like...")
         print("                                               GAME OVER")
-    if health == -999:
+    elif health == -1:
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(" Your precious taco truck flies off the bridge and you know, that you'll go down in flames...")
+        print("                                        GAME OVER")
+    elif health == -999:
         print("Whatever win is")
     
 
