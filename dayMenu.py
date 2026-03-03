@@ -76,12 +76,13 @@ def startDay(money):
         print(f"When day {day} rolls around you know it's time to pay your taxes...")
         print(f"-$5(Independant)")
         check = input("(click enter to continue)")
-        print("You have recieved an offer to cater a wedding.(click enter to continue)")
-        print("While driving there you cross a bridge and hear a weird creek.")
-        if brakes == "y":
-            print("you made it out alive. (+$50)")
-        else:
-            health = -1
+        if tires == "y":
+            print("You have recieved an offer to cater a wedding.(click enter to continue)")
+            print("While driving there you cross a bridge and hear a weird creek.")
+            if brakes == "y":
+                print("you made it out alive. (+$50)")
+            else:
+                health = -1
     elif day == 5: #day 5 special thing
         None
     elif day == 6: #day 6 special thing
