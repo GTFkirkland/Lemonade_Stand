@@ -33,7 +33,7 @@ def changeRecipe(recipe):
         recipe["hotSauce"] = int(input("How much Hot Sauce do you want in your tacos? (0-3)\n"))
     except:
         None
-    while recipe["hotSauce"] != 1 and recipe["hotSauce"] != 2 and recipe["hotSauce"] != 3:
+    while recipe["hotSauce"] != 1 and recipe["hotSauce"] != 2 and recipe["hotSauce"] != 3 and recipe["hotSauce"] != 0:
         print("INVALID NUMBER")
         try:
             recipe["hotSauce"] = int(input("How much Hot Sauce do you want in your tacos? (0-3)\n"))
