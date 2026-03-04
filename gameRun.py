@@ -50,7 +50,11 @@ else:
 print("Welcome to, TACO BEELL ON WHEEL™ 🌮🌮🌮")
 
 while True:
-    money = dayMenu.startDay(money)
+    
+    data = dayMenu.startDay(money, health)
+    health = data[1]
+    money = data[0]
+    
     if money < 10:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print(" When the day ends you feel you don't have the funds to keep going...")

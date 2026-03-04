@@ -2,7 +2,7 @@ import inventory
 import pricing
 from recipes import recipe, changeRecipe
 import customer_function
-from gameRun import health
+
 #This is the day menu for TACO BEELL ON WHEEL
 day = 1
 price = 1 #starting price
@@ -32,10 +32,9 @@ def menu(money):
             print("That is NOT an option, try again...")
     return money
 
-def startDay(money):
+def startDay(money, health):
     global tires
     global day
-    global health
     print(f"~~~~~~~~~~~~~~~~~~~~~~~DAY {day}~~~~~~~~~~~~~~~~~~~~~~~~")
     # inventory.ingredients = {"shells": 50, #STARTING INVENTORY FOR TESTING
     #             "meat": 50,
@@ -118,7 +117,9 @@ def startDay(money):
     #THE ACTUAL DAY
     day += 1
     if health > 0:
-        return menu(money)
+        data = [menu(money), health]
+        return data
     else:
-        return money
+        data = [money, health]
+        return data
     
