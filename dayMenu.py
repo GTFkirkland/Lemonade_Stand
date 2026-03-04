@@ -80,15 +80,31 @@ def startDay(money):
             print("You have recieved an offer to cater a wedding.(click enter to continue)")
             print("While driving there you cross a bridge and hear a weird creek.")
             if brakes == "y":
-                print("you made it out alive. (+$50)")
+                print("You made it out alive. (+$50)")
             else:
                 health = -1
     elif day == 5: #day 5 special thing
-        None
+        insur = input("You can purchase insurance for $45, do you?(y/n)\n")
+        if not insur == "n":
+            insur = "y"
+            print("You purchased insurance")
+            money -= 45
     elif day == 6: #day 6 special thing
         print(f"When day {day} rolls around you know it's time to pay your taxes...")
         print(f"-$5(Independant)")
         check = input("(click enter to continue)")
+        if insur == "y":
+            print("While driving to get more groceries you spot a car driving right at you.")
+            print("...")
+            print("...")
+            print("...")
+            print("...")
+            if insur == "y":
+                print("You made it out alive and insurance is going to pay for the damage.")
+            else:
+                print("You must pay for the damges. (-$30)")
+                health -= 1
+                money -= 30
     elif day == 7: #day 7 special thing
         None
     else:
