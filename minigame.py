@@ -139,8 +139,10 @@ def minigame():
     while True:
         for i in range(100):
             print("")
-        print("You: 8")
+        print("You/Player: 8")
         print("Police: C")
+        print("Wall: X")
+        print("Exit (North or East)")
         print("AVOID THE POLICE, FIND THE EXIT(E) WITH wasd")
         for row in range(0,16):
             print(level1[row])
@@ -177,7 +179,7 @@ def minigame():
         level1 = moveBot(level1, playerLocation, 1)
         level1 = moveBot(level1, playerLocation, 2)
         
-        if (level1[playerLocation[1]+1][playerLocation[0]] == 'C') or (level1[playerLocation[1]-1][playerLocation[0]] == 'C') or (level1[playerLocation[1]][playerLocation[0]+1] == 'C') or (level1[playerLocation[1]][playerLocation[0]-1] == 'C') or (level1[playerLocation[1]][playerLocation[0]] == 'C'):
+        if (level1[playerLocation[1]+1][playerLocation[0]] == 'C') or (level1[playerLocation[1]-1][playerLocation[0]] == 'C') or (level1[playerLocation[1]][playerLocation[0]+1] == 'C') or (level1[playerLocation[1]][playerLocation[0]-1] == 'C') or (level1[playerLocation[1]][playerLocation[0]] in botLocations):
             health = 0
             print("You died...")
             break
