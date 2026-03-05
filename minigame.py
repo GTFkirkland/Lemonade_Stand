@@ -181,7 +181,11 @@ def minigame():
         
         if (level1[playerLocation[1]+1][playerLocation[0]] == 'C') or (level1[playerLocation[1]-1][playerLocation[0]] == 'C') or (level1[playerLocation[1]][playerLocation[0]+1] == 'C') or (level1[playerLocation[1]][playerLocation[0]-1] == 'C') or (level1[playerLocation[1]][playerLocation[0]] in botLocations):
             health = 0
+            for i in range(100):
+                print("")
             print("You died...")
+            for row in range(0,16):
+                print(level1[row])
             break
 
         if (level1[playerLocation[1]+1][playerLocation[0]] == 'E') or (level1[playerLocation[1]-1][playerLocation[0]] == 'E') or (level1[playerLocation[1]][playerLocation[0]+1] == 'E') or (level1[playerLocation[1]][playerLocation[0]-1] == 'E'):
