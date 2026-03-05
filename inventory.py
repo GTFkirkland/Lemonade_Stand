@@ -18,8 +18,8 @@ def buyIngre(money,type):
             except:
                 print("Add a realistic integer number") 
         money = inventory(item, amount, money)
-        check = input("Purchase more ingredients?\n")
-        if check == "no" or check == "No" or check == "n" or check == "N":
+        check = input("Purchase more ingredients?(y/n)\n")
+        if check == "n":
             print("~~~~~~~~~~MENU~~~~~~~~~~")
             return money
         else:
@@ -35,8 +35,8 @@ def inventory(item, amount, money):
     global ingredients
     if item == "shells" or item == "1":
         if money >= round(amount * .40,2):
-            check = input(f"This will cost ${round(amount * .40,2)}, continue?\n")
-            if check == "yes" or check == "Yes" or check == "y" or check == "Y":
+            check = input(f"This will cost ${round(amount * .40,2)}, continue?(y/n)\n")
+            if check != "n":
                 ingredients["shells"] += amount
                 money -= round(amount * .40,2)
                 print(f"-${round(amount * .40,2)}")
@@ -44,8 +44,8 @@ def inventory(item, amount, money):
                 None
         else:
             print("You're too poor to afford this.")
-            check = input("Go into debt?")
-            if check == "no" or check == "No" or check == "n" or check == "N":
+            check = input("Go into debt?(y/n)")
+            if check != "n":
                 None
             else:
                 print("CHEATER!!!")
@@ -53,8 +53,8 @@ def inventory(item, amount, money):
                 money -= 1
     elif item == "meat" or item == "2":
         if money >= round(amount * .70,2):
-            check = input(f"This will cost ${round(amount * .70,2)}, continue?\n")
-            if check == "yes" or check == "Yes" or check == "y" or check == "Y":
+            check = input(f"This will cost ${round(amount * .70,2)}, continue?(y/n)\n")
+            if check != "n":
                 ingredients["meat"] += amount
                 money -= round(amount * .70,2)
                 print(f"-${round(amount * .70,2)}")
@@ -62,8 +62,8 @@ def inventory(item, amount, money):
                 None
         else:
             print("You're too poor to afford this.")
-            check = input("Go into debt?")
-            if check == "no" or check == "No" or check == "n" or check == "N":
+            check = input("Go into debt?(y/n)")
+            if check != "n":
                 None
             else:
                 print("CHEATER!!!")
@@ -71,8 +71,8 @@ def inventory(item, amount, money):
                 money -= 1
     elif item == "cheese" or item == "3":
         if money >= round(amount * .55,2):
-            check = input(f"This will cost ${round(amount * .55,2)}, continue?\n")
-            if check == "yes" or check == "Yes" or check == "y" or check == "Y":
+            check = input(f"This will cost ${round(amount * .55,2)}, continue?(y/n)\n")
+            if check != "n":
                 ingredients["cheese"] += amount
                 money -= round(amount * .55,2)
                 print(f"-${round(amount * .55,2)}")
@@ -80,8 +80,8 @@ def inventory(item, amount, money):
                 None
         else:
             print("You're too poor to afford this.")
-            check = input("Go into debt?")
-            if check == "no" or check == "No" or check == "n" or check == "N":
+            check = input("Go into debt?(y/n)")
+            if check != "n":
                 None
             else:
                 print("CHEATER!!!")
@@ -89,8 +89,8 @@ def inventory(item, amount, money):
                 money -= 1
     else:
         if money >= round(amount * .35,2):
-            check = input(f"This will cost ${round(amount * .35,2)}, continue?\n")
-            if check == "yes" or check == "Yes" or check == "y" or check == "Y":
+            check = input(f"This will cost ${round(amount * .35,2)}, continue?(y/n)\n")
+            if check != "n":
                 ingredients["hotSauce"] += amount
                 money -= round(amount * .35,2)
                 print(f"-${round(amount * .35,2)}")
@@ -98,8 +98,8 @@ def inventory(item, amount, money):
                 None
         else:
             print("You're too poor to afford this.")
-            check = input("Go into debt?")
-            if check == "no" or check == "No" or check == "n" or check == "N":
+            check = input("Go into debt?(y/n)")
+            if check != "n":
                 None
             else:
                 print("CHEATER!!!")

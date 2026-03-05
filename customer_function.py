@@ -80,10 +80,10 @@ def runCustomers(recipe, price, ingredients):
     if numberOfcustomers == 0:
         print("You had no tacos to sell... and got no customers... 😭🌮")
     
-    if ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] == 0 and numberOfcustomers > 0:
+    elif ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] == 0 and numberOfcustomers > 0:
         print("You successfuly sold all of your tacos!✅")
     
-    if ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] > 0:
+    elif ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] > 0:
         print("Some of your ingredients spoiled...❌")
     return money
 
