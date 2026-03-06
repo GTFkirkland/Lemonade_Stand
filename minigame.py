@@ -19,7 +19,7 @@ def getBot(level1):
                 else:
                     botLocations[i][0] = random.randint(9,14)
     
-            if level1[botLocations[0][1]][botLocations[0][0]] == 'X' or level1[botLocations[1][1]][botLocations[1][0]] == 'X' or level1[botLocations[2][1]][botLocations[2][0]] == 'X':
+            if (level1[botLocations[0][1]][botLocations[0][0]] == 'X' or level1[botLocations[0][1]][botLocations[0][0]] == 'C') or (level1[botLocations[1][1]][botLocations[1][0]] == 'X' or level1[botLocations[1][1]][botLocations[1][0]] == 'C') or (level1[botLocations[2][1]][botLocations[2][0]] == 'X' or level1[botLocations[2][1]][botLocations[2][0]] == 'C'):
                 while level1[botLocations[0][1]][botLocations[0][0]] == 'X' or level1[botLocations[1][1]][botLocations[1][0]] == 'X' or level1[botLocations[2][1]][botLocations[2][0]] == 'X':
                     botLocations = [['N/A', random.randint(-15,-2)],['N/A', random.randint(-15,-2)],['N/A', random.randint(-15,-2)]]
                     for i in range(0,2):

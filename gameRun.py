@@ -55,7 +55,7 @@ while True:
     health = data[1]
     money = data[0]
     
-    if money < 10:
+    if money < 5 and (inventory["shells"] < 1 or inventory["meat"] < 1 or inventory["cheese"] < 1):
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print(" When the day ends you feel you don't have the funds to keep going...")
         print("                           GAME OVER")
@@ -65,7 +65,7 @@ while True:
         print(" You feel the handcuffs latching around you wrists and will soon know what a dirty prison cell smells like...")
         print("                                               GAME OVER")
     elif health == -1:
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print(" Your precious taco truck flies off the bridge and you know, that you'll go down in flames...")
         print("                                        GAME OVER")
     elif health == -999:
