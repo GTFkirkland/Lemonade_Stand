@@ -48,9 +48,12 @@ def startDay(money, health):
             tires = "y"
             print("You repaired the tires on the truck... -$50")
             money -= 50
+        else:
+            print("The deal has been left in the dust")
     elif day == 2: #day 2 special thing
         print(f"When day {day} rolls around you know it's time to pay your taxes...")
-        print(f"-$5(Independant)")
+        print(f"-$2(Independant)")
+        money -= 2
         check = input("(click enter to continue)")
         check = input("When you wake up you spot a chicken crossing the road...")
         if tires == "y":
@@ -62,6 +65,8 @@ def startDay(money, health):
                 check = input("While viewing the chicken's final moments you spot something green in its mouth.")
                 check = input('Inside you find a $25 bill and think, "How did that get there?" +$25')
                 money += 25
+            else:
+                print("You have a good heart... not what I would've done though")
         else:
             print("The chicken makes it to the other side...")
     elif day == 3: #day 3 special thing
@@ -71,13 +76,16 @@ def startDay(money, health):
             brakes = "y"
             print("You purchased brakes... -$25")
             money -= 25
+        else:
+            print("The brakes are bought shortly after and you feel as though you didn't make the right decision")
     elif day == 4: #day 4 special thing
         print(f"When day {day} rolls around you know it's time to pay your taxes...")
-        print(f"-$5(Independant)")
+        print(f"-$2(Independant)")
+        money -= 2
         check = input("(click enter to continue)")
         if tires == "y":
-            print("You have recieved an offer to cater a wedding.(click enter to continue)")
-            print("While driving there you cross a bridge and hear a weird creek.")
+            check = input("The day's begui(click enter to continue)")
+            check = input("While driving there you cross a bridge and hear a weird creek.")
             if brakes == "y":
                 print("You made it out alive. (+$50)")
             else:
@@ -90,7 +98,8 @@ def startDay(money, health):
             money -= 45
     elif day == 6: #day 6 special thing
         print(f"When day {day} rolls around you know it's time to pay your taxes...")
-        print(f"-$5(Independant)")
+        print(f"-$2(Independant)")
+        money -= 2
         check = input("(click enter to continue)")
         if insur == "y":
             print("While driving to get more groceries you spot a car driving right at you.")
@@ -110,7 +119,7 @@ def startDay(money, health):
         if day % 2 == 0:
             print(f"When day {day} rolls around you know it's time to pay your taxes...")
             print(f"-${round(day*(money/100),2)}(Dependant)")
-            print(f"-$5(Independant)")
+            print(f"-$2(Independant)")
             check = input("(click enter to continue)")
             money -= round(day*(money/100),2)
     
