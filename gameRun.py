@@ -49,12 +49,12 @@ else:
 #GAME
 print("Welcome to, TACO BEELL ON WHEEL™ 🌮🌮🌮")
 
-while True:
-    
+while health != -999:
+    #day run
     data = dayMenu.startDay(money, health)
     health = data[1]
     money = data[0]
-    
+    #stuff
     if money < 5 and (inventory["shells"] < 1 or inventory["meat"] < 1 or inventory["cheese"] < 1):
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print(" When the day ends you feel you don't have the funds to keep going...")
@@ -64,12 +64,27 @@ while True:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print(" You feel the handcuffs latching around you wrists and will soon know what a dirty prison cell smells like...")
         print("                                               GAME OVER")
+        break
     elif health == -1:
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(" Your precious taco truck flies off the bridge... and you know, that you'll go down in flames...")
-        print("                                        GAME OVER")
-    elif health == -999:
-        print("Whatever win is")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(" In the air, above a seemingly endless void, you know that you'll go down in flames...")
+        print("                                      GAME OVER")
+        break
+    if dayMenu.getDay() == 7:
+        check = input("You have reached the end of your week of business, remember! if you go bankrupt from now on you will STILL lose!")
+        end = input("Do you wish to press on? (y/n)")
+    elif dayMenu.getDay() > 7:
+        check = input("Remember, if you go bankrupt you WILL lose.")
+        end = input("Do you still wish to continue your campaign in the business world? (y/n)")
+else:
+    if (money-200) < 1000:
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(f" You pack up your things and exit the truck feeling proud that you lasted {dayMenu.getDay()} days long!🕛")
+    elif (money-200):
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(f" You leave your truck knowing how much of a successful business person you are! You lasted {dayMenu.getDay()} days long!🕛")
+    print(f"You sold {customer_function.gethsTacos()} tacos!")
+    print(f"You made ${money-200} profit after starting your business!")
     
 
 

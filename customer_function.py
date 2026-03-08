@@ -3,9 +3,11 @@ import inventory
 import random
 from customer_names import He_names, She_names
 from time import sleep
+hsTacos = 0
 def runCustomers(recipe, price, ingredients):
     global He_names
     global She_names
+    global hsTacos
     customers = []
     numberOfcustomers = inventory.maxTacos(ingredients)
     for i in range(numberOfcustomers):
@@ -66,6 +68,7 @@ def runCustomers(recipe, price, ingredients):
     print("~~~~~~~~~~END OF DAY~~~~~~~~~~")
     print(f"Tacos sold: {tacosSold}")
     print(f"Money earned today: ${money}")
+    hsTacos += tacosSold
     if numberOfcustomers > 0:
         print(f"""{sadCounter['too high price']} customers thought the price was too high
 {sadCounter['too little cheese']} customers thought there wasn't enough cheese
@@ -87,7 +90,9 @@ def runCustomers(recipe, price, ingredients):
         print("Some of your ingredients spoiled...❌")
     return money
 
-
+def gethsTacos():
+    global hsTacos
+    return hsTacos
 
 
 #basicaly, for the price I decided that each meat you put in, the more lenient the customers would be about the "too high of a price"- making more than one meat do something
