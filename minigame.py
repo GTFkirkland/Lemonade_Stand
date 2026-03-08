@@ -214,5 +214,3 @@ def minigame():
             sleep(0.1)
             return 1
 
-
-minigame()
