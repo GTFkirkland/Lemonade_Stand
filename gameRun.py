@@ -70,7 +70,7 @@ while health != -999:
         print(" In the air, above a seemingly endless void, you know that you'll go down in flames...")
         print("                                      GAME OVER")
         break
-    
+    end = "n"
     if dayMenu.getDay() == 7:
         check = input("You have reached the end of your week of business, remember! if you go bankrupt from now on you will STILL lose!")
         end = input("Do you wish to press on? (y/n)")
