@@ -7,14 +7,19 @@ def pricingInternal(price):
             copyPrice = float(input("What do you want to set your new price as? \n"))
             if copyPrice <= 0 or copyPrice > 15:
                 print("This is an INVALID price, please try again")
-        except:
+        except ValueError:
             print("This is an INVALID price, please try again")
             continue
     print(f"Your price is ${copyPrice}")
     check = input("Do you like these changes?(y/n)\n")
     if check == "no" or check == "No" or check == "n" or check == "N":
         print("Reverting changes... RELOADING")
-        return pricingInternal(price)
+        try:
+            return pricingInternal(price)
+        except RecursionError:
+            print("Congrats, you broke the code... too bad!")
+            print("~~~~~~~~~~MENU~~~~~~~~~~")
+            return copyPrice
     else:
         print("Changes successfuly made...")
         print("~~~~~~~~~~MENU~~~~~~~~~~")

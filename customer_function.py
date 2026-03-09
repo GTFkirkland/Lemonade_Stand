@@ -31,7 +31,10 @@ def runCustomers(recipe, price, ingredients):
             name = random.choice(He_names)
         else:
             name = random.choice(She_names)
-        print(f"Customer {i + 1}-{name} walks up to the truck...")
+        if chosenGender == "He":
+            print(f"Customer {i + 1}-{name} walks up to the truck...🚶‍♂️‍➡️🚚")
+        else:
+            print(f"Customer {i + 1}-{name} walks up to the truck...🚶‍♀️‍➡️🚚")
 
         #original code if you don't like the changes:
         #elif abs(recipe["hotSauce"] - spice_pref) >= 1:
@@ -62,7 +65,7 @@ def runCustomers(recipe, price, ingredients):
                 ingredients["cheese"] -= recipe["cheese"]
                 ingredients["hotSauce"] -= recipe["hotSauce"]
             else:
-                print(f"Customer {i + 1} wanted to buy but you ran out of ingredients!!")
+                print(f"Customer {i + 1} wanted to buy but you ran out of ingredients!") #does this even run?
         sleep(random.random()*0.3)
 
     print("~~~~~~~~~~END OF DAY~~~~~~~~~~")

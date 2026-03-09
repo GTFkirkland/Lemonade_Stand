@@ -55,7 +55,7 @@ while health != -999:
     health = data[1]
     money = data[0]
     #stuff
-    if money < 5 and (inventory["shells"] < 1 or inventory["meat"] < 1 or inventory["cheese"] < 1):
+    if money < 5 and (inventory.ingredients["shells"] < 1 or inventory.ingredients["meat"] < 1 or inventory.ingredients["cheese"] < 1):
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print(" When the day ends you feel you don't have the funds to keep going...💀💰")
         print("                           GAME OVER")

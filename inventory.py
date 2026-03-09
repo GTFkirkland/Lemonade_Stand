@@ -87,7 +87,7 @@ def inventory(item, amount, money):
                 print("CHEATER!!!")
                 print("-$1")
                 money -= 1
-    else:
+    elif item == "hotSauce" or item == "4":
         if money >= round(amount * .35,2):
             check = input(f"This will cost ${round(amount * .35,2)}, continue?(y/n)\n")
             if check != "n":

@@ -54,12 +54,17 @@ def menu(money):
             print("That is NOT an option, try again...")
     return money
 
+tires = "n"
+brakes = "n"
+wedding = "n"
+insur = "n"
 def startDay(money, health):
     global tires
     global day
     global brakes
     global wedding
     global evades
+    global insur
     print(f"~~~~~~~~~~~~~~~~~~~~~~~DAY {day}~~~~~~~~~~~~~~~~~~~~~~~~")
     # inventory.ingredients = {"shells": 50, #STARTING INVENTORY FOR TESTING
     #             "meat": 50,
