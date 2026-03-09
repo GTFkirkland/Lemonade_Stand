@@ -34,9 +34,9 @@ def runCustomers(recipe, price, ingredients):
         else:
             name = random.choice(She_names)
         if chosenGender == "He":
-            print(f"Customer {i + 1}-{name} walks up to the truck...🚶‍♂️‍➡️🚚")
+            print(f"Customer {i + 1}-{name} walks up to the truck...")
         else:
-            print(f"Customer {i + 1}-{name} walks up to the truck...🚶‍♀️‍➡️🚚")
+            print(f"Customer {i + 1}-{name} walks up to the truck...")
 
         #original code if you don't like the changes:
         #elif abs(recipe["hotSauce"] - spice_pref) >= 1:
@@ -75,18 +75,18 @@ def runCustomers(recipe, price, ingredients):
     print(f"Money earned today: ${money}")
     hsTacos += tacosSold
     if numberOfcustomers > 0:
-        print(f"""{sadCounter['too high price']} customers thought the price was too high❌💵
-{sadCounter['too little cheese']} customers thought there wasn't enough cheese❌🧀
-{sadCounter['too much cheese']} customers thought there was too much cheese🧀🧀
-{sadCounter['too little sauce']} customers thought the taco looked too mild❌🔥
-{sadCounter['too much sauce']} customers thought the taco looked too spicy🔥🔥""")
+        print(f"""{sadCounter['too high price']} customers thought the price was too high
+{sadCounter['too little cheese']} customers thought there wasn't enough cheese
+{sadCounter['too much cheese']} customers thought there was too much cheese
+{sadCounter['too little sauce']} customers thought the taco looked too mild
+{sadCounter['too much sauce']} customers thought the taco looked too spicy""")
     #some ingredients spoil
     ingredients["shells"] = round(ingredients["shells"]/1.5)
     ingredients["meat"] = round(ingredients["meat"]/4)
     ingredients["cheese"] = round(ingredients["cheese"]/2)
     #hotsauce doesn't spoil
     if numberOfcustomers == 0:
-        print("You had no tacos to sell... and got no customers... 😭🌮")
+        print("You had no tacos to sell... and got no customers... ")
         cheat += 1
     elif ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] == 0 and numberOfcustomers > 0:
         print("You successfuly sold all of your tacos!✅")
