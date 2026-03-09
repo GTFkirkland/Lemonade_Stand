@@ -21,7 +21,7 @@ def evade(type):
             return minigame.minigame()
         else:
             print("What a good Samaritan you are!")
-            return False
+            return 3
 
 
 def getDay():
@@ -81,27 +81,27 @@ def startDay(money, health):
         print(f"When day {day} rolls around you know it's time to pay your taxes...")
         #tax things
         taxes = evade(1)
-        if taxes == False:
+        if taxes == 3:
             print(f"-$2(Independant)")
             money -= 2
         else:
             health = taxes
-        
-        check = input("(click enter to continue)")
-        check = input("When you wake up you spot a chicken crossing the road...")
-        if tires == "y":
-            chicken = input("RuN iT oVeR?(y/n)")
-            if chicken != "n":
-                chicken = "y"
-                for i in range(5):
-                    check = input("...")
-                check = input("While viewing the chicken's final moments you spot something green in its mouth.")
-                check = input('Inside you find a $25 bill and think, "How did that get there?" +$25')
-                money += 25
+        if health == 1:
+            check = input("(click enter to continue)")
+            check = input("When you wake up you spot a chicken crossing the road...")
+            if tires == "y":
+                chicken = input("RuN iT oVeR?(y/n)")
+                if chicken != "n":
+                    chicken = "y"
+                    for i in range(5):
+                        check = input("...")
+                    check = input("While viewing the chicken's final moments you spot something green in its mouth.")
+                    check = input('Inside you find a $25 bill and think, "How did that get there?" +$25')
+                    money += 25
+                else:
+                    print("You have a good heart... not what I would've done though")
             else:
-                print("You have a good heart... not what I would've done though")
-        else:
-            print("The chicken makes it to the other side...")
+                print("The chicken makes it to the other side...")
     
     
     elif day == 3: #day 3 special thing
@@ -114,38 +114,40 @@ def startDay(money, health):
         else:
             print("The brakes are bought shortly after by someone else and you feel as though you didn't make the right decision")
     
+    
     elif day == 4: #day 4 special thing
         print(f"When day {day} rolls around you know it's time to pay your taxes...")
         
         #tax things
         taxes = evade(1)
-        if taxes == False:
+        if taxes == 3:
             print(f"-$2(Independant)")
             money -= 2
         else:
             health = taxes
         
-        check = input("(click enter to continue)")
-        if tires == "y":
-            check = input("Your day starts off with an offer to cater a wedding for $50 (click enter to continue)")
-            wedding = input("Do you accept the offer? (y/n)")
-            if wedding != "n":
-                wedding = "y"
-            #start
-            if wedding == "y":
-                check = input("On your way over to the wedding rain starts to fall...")
-                check = input("Halfway to the celebration you approach a sketchy bridge...")
-                check = input("While driving over, the water on the road causes you to lose control of the wheel...")
-                if brakes == "y":
-                    check = input("You use you truck's natural functions to regain contorl.")
-                    check = input("After arriving to the wedding you learn that you must sell your tacos for free...")
-                    check = input("Even so, you still made $50 for showing up. +$50")
-                    money += 50
+        if health == 1:
+            check = input("(click enter to continue)")
+            if tires == "y":
+                check = input("Your day starts off with an offer to cater a wedding for $50 (click enter to continue)")
+                wedding = input("Do you accept the offer? (y/n)")
+                if wedding != "n":
+                    wedding = "y"
+                #start
+                if wedding == "y":
+                    check = input("On your way over to the wedding rain starts to fall...")
+                    check = input("Halfway to the celebration you approach a sketchy bridge...")
+                    check = input("While driving over, the water on the road causes you to lose control of the wheel...")
+                    if brakes == "y":
+                        check = input("You use you truck's natural functions to regain contorl.")
+                        check = input("After arriving to the wedding you learn that you must sell your tacos for free...")
+                        check = input("Even so, you still made $50 for showing up. +$50")
+                        money += 50
+                    else:
+                        check = input("with no way to slow down you fly through the guard rail.")
+                        health = -1
                 else:
-                    check = input("with no way to slow down you fly through the guard rail.")
-                    health = -1
-            else:
-                print("I guess you don't like big parties...")
+                    print("I guess you don't like big parties...")
 
     
     
@@ -164,21 +166,22 @@ def startDay(money, health):
         
         #tax things
         taxes = evade(1)
-        if taxes == False:
+        if taxes == 3:
             print(f"-$2(Independant)")
             money -= 2
         else:
             health = taxes
         
-        check = input("(click enter to continue)")
-        if insur == "y":
-            check = input("In the morning you drive to a new spot to get a different customer base.")
-            check = input("On the way, a kid on a bike crashes into you, smashing one of your front headlights.")
+        if health == 1:
+            check = input("(click enter to continue)")
             if insur == "y":
-                print("Thanks to the insurance you bought, you don't have to pay for the damages.")
-            else:
-                print("Sadly, you must pay $35 to fix your headlight. -$35)")
-                money -= 35
+                check = input("In the morning you drive to a new spot to get a different customer base.")
+                check = input("On the way, a kid on a bike crashes into you, smashing one of your front headlights.")
+                if insur == "y":
+                    print("Thanks to the insurance you bought, you don't have to pay for the damages.")
+                else:
+                    print("Sadly, you must pay $35 to fix your headlight. -$35)")
+                    money -= 35
     
     
     elif day == 7: #day 7 special thing
@@ -196,7 +199,7 @@ def startDay(money, health):
             print(f"When day {day} rolls around you know it's time to pay your taxes...")
             #tax things
             taxes = evade(1)
-            if taxes == False:
+            if taxes == 3:
                 print(f"-${round(day*(money/100),2)}(Dependant)")
                 print(f"-$2(Independant)")
                 money -= round(day*(money/100),2)+2

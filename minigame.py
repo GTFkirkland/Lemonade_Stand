@@ -192,25 +192,25 @@ def minigame():
         level1 = moveBot(level1, playerLocation, 1)
         level1 = moveBot(level1, playerLocation, 2)
 
-        #death
-        if (level1[playerLocation[1]+1][playerLocation[0]] == 'C' or level1[playerLocation[1]-1][playerLocation[0]] == 'C' or level1[playerLocation[1]][playerLocation[0]+1] == 'C' or level1[playerLocation[1]][playerLocation[0]-1] == 'C' or playerLocation in botLocations):
-            for i in range(100):
-                print("")
-            print("You were caught and arrested")
-            for row in range(0,16):
-                print(level1[row])
-            print("exiting...")
-            sleep(0.1)
-            return 0
 
         #exit
         if (level1[playerLocation[1]+1][playerLocation[0]] == 'E' or level1[playerLocation[1]-1][playerLocation[0]] == 'E' or level1[playerLocation[1]][playerLocation[0]+1] == 'E' or level1[playerLocation[1]][playerLocation[0]-1] == 'E'):
             for i in range(100):
                 print("")
-            print("You found the EXIT and escaped the police!")
             for row in range(0,16):
                 print(level1[row])
+            print("You found the EXIT and escaped the police!✅")
             print("exiting...")
             sleep(0.1)
             return 1
+        #death
+        elif (level1[playerLocation[1]+1][playerLocation[0]] == 'C' or level1[playerLocation[1]-1][playerLocation[0]] == 'C' or level1[playerLocation[1]][playerLocation[0]+1] == 'C' or level1[playerLocation[1]][playerLocation[0]-1] == 'C' or playerLocation in botLocations):
+            for i in range(100):
+                print("")
+            for row in range(0,16):
+                print(level1[row])
+            print("You were caught and arrested!🚫")
+            print("exiting...")
+            sleep(0.1)
+            return 0
 
