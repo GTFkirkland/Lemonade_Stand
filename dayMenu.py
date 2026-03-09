@@ -35,10 +35,10 @@ def menu(money):
     menuChoice = ""
     while menuChoice != "5":
         print("""What would you like to select?
-1) Purchase Ingredients
-2) Change taco price
-3) Change taco recipe
-4) Display inventory and money""")
+1) Purchase Ingredients 🛒
+2) Change taco price 💵
+3) Change taco recipe 📃
+4) Display inventory and money 💰""")
         menuChoice = input("5) Start day\n")
         if menuChoice == "1":
             money = inventory.buyIngre(money, 1)
