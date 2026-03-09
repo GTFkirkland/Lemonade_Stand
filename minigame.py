@@ -148,7 +148,7 @@ def minigame():
     while True:
         for i in range(100):
             print("")
-        print("You/Player: 8")
+        print("You/Player: 8 (bottom left)")
         print("Police: C")
         print("Wall: X")
         print("Exit (North or East)")
