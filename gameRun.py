@@ -46,6 +46,7 @@ if check == "no" or check == "No" or check == "n" or check == "N":
 else:
     introStory.startGame(1)
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("Ypu have $200💵")
 #GAME
 print("Welcome to, TACO BEELL ON WHEEL™ 🌮🔔🛞")
 
