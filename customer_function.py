@@ -4,7 +4,9 @@ import random
 from customer_names import He_names, She_names
 from time import sleep
 hsTacos = 0
+cheat = 0
 def runCustomers(recipe, price, ingredients):
+    global cheat
     global He_names
     global She_names
     global hsTacos
@@ -85,7 +87,7 @@ def runCustomers(recipe, price, ingredients):
     #hotsauce doesn't spoil
     if numberOfcustomers == 0:
         print("You had no tacos to sell... and got no customers... 😭🌮")
-    
+        cheat += 1
     elif ingredients["shells"] + ingredients["meat"] + ingredients["cheese"] == 0 and numberOfcustomers > 0:
         print("You successfuly sold all of your tacos!✅")
     
