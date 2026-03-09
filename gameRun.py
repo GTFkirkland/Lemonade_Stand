@@ -38,16 +38,19 @@ health = 1 #yes, you can die now
 # print(f"Total money: ${money}")
 # inventory.showStat(money)
 
-check = input("Game - Do you understand that if I ask you a question and you don't answer (y/n)✅❌, I will AUTOMATICALY input y✅?\n")
+check = input("Game - Do you understand that if I ask you a question and you don't answer (y/n), I will AUTOMATICALY input y?\n")
+check = input("If you haven't already, please put the game in full screen. (enter to continue)")
+
 check = input("READ GAME BACKGROUND?📙\n")
 if check == "no" or check == "No" or check == "n" or check == "N":
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     introStory.startGame(2)
+    print("you have $200💵")
 else:
     introStory.startGame(1)
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 #GAME
-print("Welcome to, TACO BEELL ON WHEEL™ 🌮🔔🛞")
+print("Welcome to, TACO BEELL ON WHEEL™ 🌮")
 
 while health != -999:
     #day run
@@ -57,26 +60,26 @@ while health != -999:
     #stuff
     if money < 5 and (inventory.ingredients["shells"] < 1 or inventory.ingredients["meat"] < 1 or inventory.ingredients["cheese"] < 1):
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(" When the day ends you feel you don't have the funds to keep going...💀💰")
+        print(" When the day ends you feel you don't have the funds to keep going...")
         print("                           GAME OVER")
         break
     elif health == 0:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(" You feel the handcuffs latching around you wrists and will soon know what a dirty prison cell smells like...💀👮")
+        print(" You feel the handcuffs latching around you wrists and will soon know what a dirty prison cell smells like...")
         print("                                               GAME OVER")
         break
     elif health == -1:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(" In the air, above a seemingly endless void, you know that you'll go down in flames...💀🔥")
+        print(" In the air, above a seemingly endless void, you know that you'll go down in flames...")
         print("                                      GAME OVER")
         break
     end = "n"
     if dayMenu.getDay() == 7:
-        check = input("You have reached the end of your week of business🏢, remember! if you go bankrupt from now on you will STILL lose!❌")
+        check = input("You have reached the end of your week of business, remember! if you go bankrupt from now on you will STILL lose!❌")
         end = input("Do you wish to press on? (y/n)")
     elif dayMenu.getDay() > 7:
         check = input("Remember, if you go bankrupt you WILL lose.❌")
-        end = input("Do you still wish to continue your campaign in the business world?🏢 (y/n)")
+        end = input("Do you still wish to continue your campaign in the business world? (y/n)")
     
     if end != "n":
         end = "y"
