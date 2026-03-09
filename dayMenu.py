@@ -77,7 +77,7 @@ def startDay(money, health):
         tires = input("Do you repair the 3 missing tires on the taco truck for $50?(y/n)\n")
         if not tires == "n":
             tires = "y"
-            print("You repaired the tires on the truck... -$50")
+            print("You repaired the tires on the truck... -$50💵")
             money -= 50
         else:
             print("The deal has been left in the dust")
@@ -87,7 +87,7 @@ def startDay(money, health):
         #tax things
         taxes = evade(1)
         if taxes == 3:
-            print(f"-$2(Independant)")
+            print(f"-$2(Independant)💵")
             money -= 2
         else:
             health = taxes
@@ -101,8 +101,8 @@ def startDay(money, health):
                     for i in range(5):
                         check = input("...")
                     check = input("While viewing the chicken's final moments you spot something green in its mouth.")
-                    check = input('Inside you find a $25 bill and think, "How did that get there?" +$25')
-                    money += 25
+                    check = input('Inside you find a $40 cash and think, "How did that get there?" +$40')
+                    money += 40
                 else:
                     print("You have a good heart... not what I would've done though")
             else:
@@ -111,11 +111,11 @@ def startDay(money, health):
     
     elif day == 3: #day 3 special thing
         check = input("The day's begining greets you with an offer...")
-        brakes = input("You can buy truck brakes for $25, do you?(y/n)\n")
+        brakes = input("You can buy truck brakes for $30, do you?(y/n)\n")
         if not brakes == "n":
             brakes = "y"
-            print("You purchased brakes... -$25")
-            money -= 25
+            print("You purchased brakes... -$30💵")
+            money -= 30
         else:
             print("The brakes are bought shortly after by someone else and you feel as though you didn't make the right decision")
     
@@ -126,7 +126,7 @@ def startDay(money, health):
         #tax things
         taxes = evade(1)
         if taxes == 3:
-            print(f"-$2(Independant)")
+            print(f"-$2(Independant)💵")
             money -= 2
         else:
             health = taxes
@@ -134,7 +134,7 @@ def startDay(money, health):
         if health == 1:
             check = input("(click enter to continue)")
             if tires == "y":
-                check = input("Your day starts off with an offer to cater a wedding for $50 (click enter to continue)")
+                check = input("Your day starts off with an offer to cater a wedding for $50💵 (click enter to continue)")
                 wedding = input("Do you accept the offer? (y/n)")
                 if wedding != "n":
                     wedding = "y"
@@ -146,7 +146,7 @@ def startDay(money, health):
                     if brakes == "y":
                         check = input("You use you truck's natural functions to regain contorl.")
                         check = input("After arriving to the wedding you learn that you must sell your tacos for free...")
-                        check = input("Even so, you still made $50 for showing up. +$50")
+                        check = input("Even so, you still made $75 for showing up. +$75💵")
                         money += 50
                     else:
                         check = input("with no way to slow down you fly through the guard rail.")
@@ -157,10 +157,10 @@ def startDay(money, health):
     
     
     elif day == 5: #day 5 special thing
-        insur = input("You can purchase insurance for $25, do you?(y/n)\n")
+        insur = input("You can purchase insurance for $25💵, do you?(y/n)\n")
         if insur != "n":
             insur = "y"
-            print("You purchased insurance. -$25")
+            print("You purchased insurance. -$25💵")
             money -= 25
         else:
             print("Maybe you prefer being cheap...")
@@ -172,7 +172,7 @@ def startDay(money, health):
         #tax things
         taxes = evade(1)
         if taxes == 3:
-            print(f"-$2(Independant)")
+            print(f"-$2(Independant)💵")
             money -= 2
         else:
             health = taxes
@@ -205,8 +205,8 @@ def startDay(money, health):
             #tax things
             taxes = evade(1)
             if taxes == 3:
-                print(f"-${round(day*(money/100),2)}(Dependant)")
-                print(f"-$2(Independant)")
+                print(f"-${round(day*(money/100),2)}(Dependant)💵")
+                print(f"-$2(Independant)💵")
                 money -= round(day*(money/100),2)+2
             else:
                 health = taxes

@@ -11,7 +11,7 @@ def startGame(style):
         check = input("SINGLE")
         check = input("PENNY,")
         check = input("You count $200")
-        check = input("and begin devisisng a plan...")
+        check = input("and begin devising a plan...")
     else:
         None
     for i in range(5):
