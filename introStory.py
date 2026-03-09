@@ -10,7 +10,7 @@ def startGame(style):
         check = input("EVERY")
         check = input("SINGLE")
         check = input("PENNY,")
-        check = input("You count $200")
+        check = input("You count $200💵")
         check = input("and begin devising a plan...")
     else:
         None

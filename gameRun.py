@@ -38,16 +38,15 @@ health = 1 #yes, you can die now
 # print(f"Total money: ${money}")
 # inventory.showStat(money)
 
-check = input("Game - Do you understand that if I ask you a question and you don't answer (y/n), I will AUTOMATICALY input y✅?\n")
-check = input("READ GAME BACKGROUND?📙\n")
-if check == "no" or check == "No" or check == "n" or check == "N":
+check = input("Game - Do you understand that if I ask you a question and you don't answer (y/n), I will AUTOMATICALY input y?\n")
+check = input("READ GAME BACKGROUND?📙 (y/n)\n")
+if check == "n":
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     introStory.startGame(2)
+    print("You have $200💵")
 else:
     introStory.startGame(1)
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print("You have $200💵")
-#GAME
 print("Welcome to, TACO BEELL ON WHEEL™")
 
 while health != -999:
@@ -70,6 +69,11 @@ while health != -999:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print(" In the air, above a seemingly endless void, you know that you'll go down in flames...")
         print("                                      GAME OVER")
+        break
+    elif health == -2:
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(" You end your business after discovering that you have no commitment to it...")
+        print("                                GAME OVER")
         break
     end = "n"
     if dayMenu.getDay() == 7:

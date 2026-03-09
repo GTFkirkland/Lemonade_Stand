@@ -66,7 +66,7 @@ def startDay(money, health):
     global evades
     global insur
     if customer_function.cheat >= 3:
-        health = 0
+        health = -2
     if health == 1:
         print(f"~~~~~~~~~~~~~~~~~~~~~~~DAY {day}~~~~~~~~~~~~~~~~~~~~~~~~")
         # inventory.ingredients = {"shells": 50, #STARTING INVENTORY FOR TESTING

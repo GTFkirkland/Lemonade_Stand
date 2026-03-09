@@ -4,7 +4,7 @@ def pricingInternal(price):
     copyPrice = 0
     while copyPrice <= 0 or copyPrice > 15:
         try:
-            copyPrice = float(input("What do you want to set your new price as? \n"))
+            copyPrice = float(input("What do you want to set your new price as? (Note from dev: I recommend at least $5)\n"))
             if copyPrice <= 0 or copyPrice > 15:
                 print("This is an INVALID price, please try again")
         except ValueError:
