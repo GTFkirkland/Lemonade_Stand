@@ -6,6 +6,7 @@ recipe = {"meat": 1,
 def changeRecipe(recipe):
     print("~~~~~~~~~~~RECIPE~~~~~~~~~~~")
     #meat
+    copy = recipe
     print("Current recipe: Meat:", recipe["meat"], "/ Cheese:", recipe["cheese"], "/ Hot Sauce:", recipe["hotSauce"])
     try:
         recipe["meat"] = int(input("How much meat do you want in your tacos? (1-3)\n"))
@@ -45,7 +46,7 @@ def changeRecipe(recipe):
     if check == "no" or check == "No" or check == "n" or check == "N":
         print("Reverting changes... RELOADING")
         try:
-            return changeRecipe(recipe)
+            return changeRecipe(copy)
         except:
             print("WOW! You did this action 500+ times? AMAZING commitment!")
             print("~~~~~~~~~~MENU~~~~~~~~~~")
