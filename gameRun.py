@@ -76,12 +76,12 @@ while health != -999:
         print("                                GAME OVER")
         break
     end = "n"
-    if dayMenu.getDay() == 7:
+    if dayMenu.getDay() > 7:
         check = input("You have reached the end of your week of business, remember! if you go bankrupt from now on you will STILL lose!❌")
-        end = input("Do you wish to press on? (y/n)")
-    elif dayMenu.getDay() > 7:
+        end = input("Leave your business? (y/n)")
+    elif dayMenu.getDay() > 8:
         check = input("Remember, if you go bankrupt you WILL lose.❌")
-        end = input("Do you still wish to continue your campaign in the business world? (y/n)")
+        end = input("Quit while you're ahead? (y/n)")
     
     if end != "n":
         end = "y"
@@ -94,15 +94,15 @@ while health != -999:
 else:
     if (money-200) < 1000:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(f" You pack up your things and exit the truck feeling proud that you lasted {dayMenu.getDay()} days long!🕛")
+        print(f"You pack up your things and exit the truck feeling proud that you lasted {dayMenu.getDay()} days long!🕛")
     elif (money-200) < 3500:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(f" You leave your truck knowing how much of a successful business person you are! You lasted {dayMenu.getDay()} days long!🕛")
+        print(f"You leave your truck knowing how much of a successful business person you are! You lasted {dayMenu.getDay()} days long!🕛")
     elif (money-200) >= 3500:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(f" You leave your business in the dust after making all of your money back and then some! You lasted {dayMenu.getDay()} days long!🕛")
+        print(f"You leave your business in the dust after making all of your money back and then some! You lasted {dayMenu.getDay()} days long!🕛")
     print(f"You sold {customer_function.gethsTacos()} tacos!🌮")
-    print(f"You made ${money-200} profit after starting your business!💵")
+    print(f"You made ${round(money-200, 2)} profit after starting your business!💵")
     
 
 

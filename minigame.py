@@ -169,19 +169,19 @@ def minigame():
                 playerLocation[1] -= 1
                 level1[playerLocation[1]][playerLocation[0]] = '8'
 
-        if answer.lower() == 's':
+        elif answer.lower() == 's':
             if level1[playerLocation[1]+1][playerLocation[0]] == '_':
                 level1[playerLocation[1]][playerLocation[0]] = '_'
                 playerLocation[1] += 1
                 level1[playerLocation[1]][playerLocation[0]] = '8'
 
-        if answer.lower() == 'd':
+        elif answer.lower() == 'd':
             if level1[playerLocation[1]][playerLocation[0]+1] == '_':
                 level1[playerLocation[1]][playerLocation[0]] = '_'
                 playerLocation[0] += 1
                 level1[playerLocation[1]][playerLocation[0]] = '8'
 
-        if answer.lower() == 'a':
+        elif answer.lower() == 'a':
             if level1[playerLocation[1]][playerLocation[0]-1] == '_':
                 level1[playerLocation[1]][playerLocation[0]] = '_'
                 playerLocation[0] -= 1
@@ -191,7 +191,6 @@ def minigame():
         level1 = moveBot(level1, playerLocation, 0)
         level1 = moveBot(level1, playerLocation, 1)
         level1 = moveBot(level1, playerLocation, 2)
-
 
         #exit
         if (level1[playerLocation[1]+1][playerLocation[0]] == 'E' or level1[playerLocation[1]-1][playerLocation[0]] == 'E' or level1[playerLocation[1]][playerLocation[0]+1] == 'E' or level1[playerLocation[1]][playerLocation[0]-1] == 'E'):
