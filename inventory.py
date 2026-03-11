@@ -46,11 +46,11 @@ def inventory(item, amount, money):
             print("You're too poor to afford this.")
             check = input("Go into debt?(y/n)")
             if check != "n":
-                None
-            else:
                 print("CHEATER!!!")
                 print("-$1")
                 money -= 1
+            else:
+                None
     elif item == "meat" or item == "2":
         if money >= round(amount * .70,2):
             check = input(f"This will cost ${round(amount * .70,2)}, continue?(y/n)\n")
@@ -64,11 +64,11 @@ def inventory(item, amount, money):
             print("You're too poor to afford this.")
             check = input("Go into debt?(y/n)")
             if check != "n":
-                None
-            else:
                 print("CHEATER!!!")
                 print("-$1")
                 money -= 1
+            else:
+                None
     elif item == "cheese" or item == "3":
         if money >= round(amount * .55,2):
             check = input(f"This will cost ${round(amount * .55,2)}, continue?(y/n)\n")
@@ -82,11 +82,11 @@ def inventory(item, amount, money):
             print("You're too poor to afford this.")
             check = input("Go into debt?(y/n)")
             if check != "n":
-                None
-            else:
                 print("CHEATER!!!")
                 print("-$1")
                 money -= 1
+            else:
+                None
     elif item == "hotSauce" or item == "4":
         if money >= round(amount * .35,2):
             check = input(f"This will cost ${round(amount * .35,2)}, continue?(y/n)\n")
@@ -100,11 +100,11 @@ def inventory(item, amount, money):
             print("You're too poor to afford this.")
             check = input("Go into debt?(y/n)")
             if check != "n":
-                None
-            else:
                 print("CHEATER!!!")
                 print("-$1")
                 money -= 1
+            else:
+                None
     return money
 
 def maxTacos(list):
